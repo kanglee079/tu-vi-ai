@@ -154,6 +154,9 @@ class ChartResultPage extends GetView<ChartResultController> {
                     padding: const EdgeInsets.all(10),
                     child: ChartBoard(
                       palaces: chart.palaces,
+                      profileName: profile.name,
+                      profileYear: controller.selectedYear.value,
+                      menhLabel: 'Mệnh ${profile.gender.label}',
                       onTap: (ChartPalace palace) {
                         if (palace.isUnlocked) {
                           controller.openPalace(palace);

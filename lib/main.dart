@@ -6,12 +6,11 @@ import 'app/main_app.dart';
 import 'data/mock/prototype_dependencies.dart';
 import 'firebase_options.dart';
 
-const _kUseDebugDependencies = true;
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (_kUseDebugDependencies || kDebugMode) {
+  final useDebug = const bool.fromEnvironment('DEBUG_DEPENDENCIES', defaultValue: false);
+  if (useDebug || kDebugMode) {
     final dependencies = AppDependencies.prototype();
     runApp(MinhMenhAiApp(dependencies: dependencies));
     return;

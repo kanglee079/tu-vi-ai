@@ -161,28 +161,77 @@ class IztroChartMapper {
 
   String _starDisplayName(String key, String fallback) {
     const starMap = <String, String>{
+      // Chính tinh — 14 sao chính
       'taiYangMaj': 'Thái Dương',
       'tianFuMaj': 'Thiên Phủ',
       'wuQuMaj': 'Vũ Khúc',
       'tianXiangMaj': 'Thiên Tướng',
-      'wenChangMin': 'Văn Xương',
-      'wenQuMin': 'Văn Khúc',
-      'lianZhenMaj': 'Liêm Trinh',
-      'huaKe': 'Hóa Khoa',
       'tianTongMaj': 'Thiên Đồng',
       'taiYinMaj': 'Thái Âm',
       'tianLiangMaj': 'Thiên Lương',
       'qiShaMaj': 'Thất Sát',
       'tanLangMaj': 'Tham Lang',
       'poJunMaj': 'Phá Quân',
+      'lianZhenMaj': 'Liêm Trinh',
       'juMenMaj': 'Cự Môn',
+      'youXingMaj': 'Diêm Vương',
+      'duShaoMaj': 'Đà La',
+
+      // Phụ tinh — Văn minh
+      'wenChangMin': 'Văn Xương',
+      'wenQuMin': 'Văn Khúc',
+      'luCunMin': 'Lộc Tồn',
+      'luJiaMin': 'Lộc Giáp',
+      'tianJiMin': 'Thiên Cơ',
+      'taiYinMin': 'Thái Dương (Phụ)',
+
+      // Phụ tinh — Quý nhân
       'zuoFuMin': 'Tả Phù',
       'youBiMin': 'Hữu Bật',
-      'luCunMin': 'Lộc Tồn',
-      'tianMaMin': 'Thiên Mã',
-      'jieShen': 'Giải Thần',
       'tianKuiMin': 'Thiên Khôi',
       'tianYueMin': 'Thiên Việt',
+      'tianMaMin': 'Thiên Mã',
+      'tianChaiMin': 'Thiên Trì',
+      'tianChengMin': 'Thiên Thành',
+
+      // Phụ tinh — Tài lộc
+      'luQinMin': 'Lục Quý',
+      'tianCaiMin': 'Thiên Tài',
+      'faLunMin': 'Phá Lý Luân',
+
+      // Phụ tinh — Xấu/chướng
+      'huaLuMin': 'Hóa Lộc',
+      'huaQuanMin': 'Hóa Quyền',
+      'huaKe': 'Hóa Khoa',
+      'huaJie': 'Hóa Giải',
+      'qingYangMin': 'Thanh Dương',
+      'yinEos': 'Âm Nhật',
+      'yangRen': 'Dương Nhật',
+
+      // Phụ tinh — Xung/phá
+      'poYangMin': 'Bạch Đường',
+      'jieShen': 'Giải Thần',
+      'tiQianMin': 'Thiên Can',
+      'huaGangMin': 'Hóa Cương',
+
+      // Phụ tinh — Hỗ trợ/cát
+      'yingFengMin': 'Âm Phong',
+      'tianXinMin': 'Thiên Tâm',
+      'tianXiuMin': 'Thiên Thứ',
+      'tianGuanMin': 'Thiên Quan',
+      'tianYuanMin': 'Thiên Nguyên',
+      'tianZhongMin': 'Thiên Trung',
+      'tianLaMin': 'Thiên La',
+      'tianDeMin': 'Thiên Đức',
+      'tianXingMin': 'Thiên Hình',
+      'tianShaMin': 'Thiên Sát',
+      'tianYaoMin': 'Thiên Y',
+      'tianFuMin': 'Thiên Phủ (Phụ)',
+      'tianKongMin': 'Thiên Không',
+      'tianTongMin': 'Thiên Thông',
+      'tianJieMin': 'Thiên Giới',
+      'tianZhenMin': 'Thiên Chấn',
+      'tianYuanKai': 'Thiên Nguyệt',
     };
     return starMap[key] ?? fallback;
   }
