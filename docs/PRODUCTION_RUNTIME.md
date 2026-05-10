@@ -10,56 +10,80 @@ The following are **already wired** in this repo and do not require code changes
 - `backend/internal/platform/article_service.go` — Article listing via PostgreSQL
 - `backend/internal/platform/idempotency_service.go` — Idempotency keys via PostgreSQL
 - `backend/internal/platform/iap_purchase_service.go` — Purchase recording + coin grant
-- `backend/cmd/api/main.go` — Real services auto-wired when `DATABASE_URL` is set; falls back to stubs otherwise
+- `backend/cmd/api/main.go` — Real services auto-wired when `DATABASE_URL` is set and `FORCE_STUB_SERVICES=false`; falls back to stubs otherwise
 - `lib/core/services/iap_verification_service.dart` — Fixed to send `receiptPayload` (Apple) / `purchaseToken` (Google) with `transactionId`
-- `lib/main.dart` — Debug mode (`_kUseDebugDependencies`) bypasses Firebase for local dev
+- `lib/main.dart` — Debug mode bypasses Firebase for local dev (uses mock auth + local DB)
+- Firebase config (`lib/firebase_options.dart`, `ios/Runner/GoogleService-Info.plist`, `android/app/google-services.json`) — Project `minh-menh-ai-prod` (#202213348151)
+- Flutter iOS simulator build — verified working (`flutter build ios --simulator --no-codesign`)
+- Flutter analyze — zero issues
 
 ---
 
-## Still requires manual setup (credentials / store accounts)
+## Still requires manual setup
 
-### Firebase Auth
+### 1. Firebase Auth (Firebase Console — requires browser login)
 
-Project: `minh-menh-ai-prod`
+Project: `minh-menh-ai-prod` (#202213348151)
 
-Enable these providers in [Firebase Console](https://console.firebase.google.com/project/minh-menh-ai-prod/authentication/providers):
+**Steps:**
+1. Open [Firebase Console](https://console.firebase.google.com/project/minh-menh-ai-prod/authentication/providers)
+2. Login with the account that owns the project
+3. Click "Get started" on the Authentication page
+4. Enable these providers:
 
-- [ ] Anonymous
-- [ ] Email/Password
-- [ ] Google
-- [ ] Apple (requires paid Apple Developer account)
+| Provider | Status |
+|---|---|
+| Anonymous | ☐ Enable — needed for guest usage |
+| Email/Password | ☐ Enable |
+| Google | ☐ Enable — needs OAuth consent screen |
+| Apple | ☐ Enable (requires paid Apple Developer account) |
 
-> Note: The Identity Platform Admin API returned `BILLING_NOT_ENABLED`. Provider enablement via CLI requires `firebase login --reauth` with a project Owner. You can also enable providers manually in the Firebase Console — no code changes needed.
+For Google Sign-In: you need an **OAuth 2.0 client ID** from Google Cloud Console. The OAuth consent screen must be configured (App name, scopes, test users for development).
 
-### Backend Env
+### 2. PostgreSQL Database (Supabase)
 
-Use `backend/.env.example` as the local template. For production, prefer secret files:
+**Current status:** Database is provisioned (Supabase project `ppdzcrieayhzotwagkjs`) but unreachable from this machine due to IPv6-only DNS. Migrations have NOT been run.
 
-- `OPENAI_API_KEY_FILE`
-- `APPLE_PRIVATE_KEY_P8_FILE`
-- `GOOGLE_SERVICE_ACCOUNT_JSON_FILE`
+**To run migrations (when DB is reachable):**
+```sh
+psql "postgresql://postgres:<PASSWORD>@db.ppdzcrieayhzotwagkjs.supabase.co:5432/postgres?sslmode=require" \
+  -f backend/db/migrations/000001_init.up.sql
+```
 
-Required production values:
+**Alternative:** Run in Supabase Dashboard SQL Editor:
+```sql
+-- Paste contents of backend/db/migrations/000001_init.up.sql here
+```
+
+**On deployment server** (where DB is reachable), run:
+```sh
+cd backend
+DATABASE_URL="postgresql://..." go run ./cmd/api
+# Or with FORCE_STUB_SERVICES=false and DATABASE_URL set:
+go run ./cmd/api
+```
+
+### 3. Backend Env for Production
+
+Copy `backend/.env` and set:
 
 | Variable | Value |
 |---|---|
 | `APP_ENV` | `production` |
 | `AUTH_ALLOW_DEBUG_BYPASS` | `false` |
 | `FIREBASE_PROJECT_ID` | `minh-menh-ai-prod` |
-| `APPLE_BUNDLE_ID` | `ai.minhmenh.app` |
-| `GOOGLE_PACKAGE_NAME` | `ai.minhmenh.app` |
+| `FORCE_STUB_SERVICES` | `false` (or unset) |
+| `DATABASE_URL` | PostgreSQL connection string with SSL |
+| `OPENAI_API_KEY` | Your OpenAI API key |
 
-### PostgreSQL Database
-
-1. Create a PostgreSQL database (e.g., Supabase, Neon, Railway, or self-hosted)
-2. Run migrations:
-
-```sh
-cd backend
-psql $DATABASE_URL -f db/migrations/000001_init.up.sql
+For secret files (preferred):
+```
+OPENAI_API_KEY_FILE=/run/secrets/openai_key
+APPLE_PRIVATE_KEY_P8_FILE=/run/secrets/apple_key.p8
+GOOGLE_SERVICE_ACCOUNT_JSON_FILE=/run/secrets/gcp_sa.json
 ```
 
-### Store Product Catalog
+### 4. App Store Connect Products (IAP — paused for now)
 
 These product IDs are wired in the app and backend:
 
@@ -69,14 +93,9 @@ These product IDs are wired in the app and backend:
 | `coin_300` | Consumable | 300 | VND 79,000 |
 | `sub_month` | Subscription | 0 + entitlement `ai_monthly` | VND 199,000/month |
 
-Create the same IDs in App Store Connect and Google Play Console. Then set:
-
-| Variable | Where to get it |
-|---|---|
-| `APPLE_ISSUER_ID` | App Store Connect → Users and Access → Keys |
-| `APPLE_KEY_ID` | App Store Connect → Users and Access → Keys |
-| `APPLE_PRIVATE_KEY_P8_FILE` | Download `.p8` key file from App Store Connect |
-| `GOOGLE_SERVICE_ACCOUNT_JSON_FILE` | Google Play Console → Setup → API Access |
+When ready, create these in App Store Connect and Google Play Console. Then set:
+- `APPLE_ISSUER_ID`, `APPLE_KEY_ID`, `APPLE_PRIVATE_KEY_P8_FILE`
+- `GOOGLE_SERVICE_ACCOUNT_JSON_FILE`
 
 ---
 
@@ -87,34 +106,22 @@ Create the same IDs in App Store Connect and Google Play Console. Then set:
 ```sh
 cd backend
 go run ./cmd/api
+# Currently running: FORCE_STUB_SERVICES=true (DB unreachable)
+# When DB is reachable, set FORCE_STUB_SERVICES=false or unset
 ```
 
-With custom env:
-
-```sh
-cp backend/.env.example backend/.env
-# fill in OPENAI_API_KEY at minimum
-go run ./cmd/api
-```
+Backend is currently running at `http://127.0.0.1:8080` with stub services.
 
 ### Flutter App
 
-Local (no Firebase):
-
 ```sh
-# Debug mode bypasses Firebase — uses mock auth + local DB
-flutter run -d 13
-```
+# iOS Simulator (no Firebase — mock auth)
+flutter run -d 13 --dart-define=DEBUG_DEPENDENCIES=true
 
-With backend:
-
-```sh
+# iOS Simulator with backend (stub services)
 flutter run -d 13 --dart-define=API_BASE_URL=http://127.0.0.1:8080/v1
-```
 
-Android emulator:
-
-```sh
+# Android emulator
 flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8080/v1
 ```
 
@@ -125,26 +132,26 @@ flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8080/v1
 ### Backend
 - [ ] Set `APP_ENV=production`
 - [ ] Set `AUTH_ALLOW_DEBUG_BYPASS=false`
-- [ ] Configure `DATABASE_URL` (PostgreSQL with SSL)
-- [ ] Configure `REDIS_ADDR` + `REDIS_PASSWORD` (optional, for caching)
+- [ ] Set `FORCE_STUB_SERVICES=false` (or unset)
+- [ ] Configure `DATABASE_URL` (PostgreSQL with SSL, reachable from deployment server)
+- [ ] Run `backend/db/migrations/000001_init.up.sql`
 - [ ] Configure `OPENAI_API_KEY`
-- [ ] Configure Apple IAP credentials
-- [ ] Configure Google service account JSON
-- [ ] Run `db/migrations/000001_init.up.sql`
+- [ ] (IAP paused) Configure Apple IAP credentials
+- [ ] (IAP paused) Configure Google service account JSON
 - [ ] Deploy to Cloud Run / Railway / Fly.io / etc.
 
 ### Flutter / iOS
-- [ ] Set `_kUseDebugDependencies = false` in `lib/main.dart`
-- [ ] Set real Firebase config in `lib/firebase_options.dart`
+- [ ] Firebase Auth providers enabled (Anonymous, Email/Password, Google)
+- [ ] Set `DEBUG_DEPENDENCIES=false` for production build
+- [ ] Configure real Firebase in `lib/firebase_options.dart`
 - [ ] Enable IAP capabilities in Xcode (In-App Purchase, Push Notifications)
-- [ ] Create App Store Connect products (`coin_100`, `coin_300`, `sub_month`)
-- [ ] Test sandbox purchase flow
+- [ ] (IAP paused) Create App Store Connect products
 
 ### Flutter / Android
-- [ ] Set `_kUseDebugDependencies = false` in `lib/main.dart`
-- [ ] Set real Firebase config in `lib/firebase_options.dart`
-- [ ] Create Google Play products (`coin_100`, `coin_300`, `sub_month`)
-- [ ] Upload AAB to Google Play internal testing track
+- [ ] Firebase Auth providers enabled
+- [ ] Set `DEBUG_DEPENDENCIES=false` for production build
+- [ ] Configure real Firebase in `lib/firebase_options.dart`
+- [ ] (IAP paused) Create Google Play products
 
 ---
 
@@ -154,7 +161,7 @@ flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8080/v1
 # Backend
 cd backend && go build ./cmd/api
 
-# Flutter iOS
+# Flutter iOS Simulator
 flutter build ios --simulator --no-codesign
 
 # Flutter Android
@@ -165,3 +172,19 @@ cd backend && go test ./...
 flutter test
 flutter analyze
 ```
+
+---
+
+## Current Environment Status (May 10, 2026)
+
+| Component | Status |
+|---|---|
+| Backend binary | Running at `http://127.0.0.1:8080` |
+| Database | Supabase provisioned but unreachable (IPv6 DNS issue) |
+| Database migrations | Not run — tables don't exist |
+| Backend services | Stub mode (`FORCE_STUB_SERVICES=true`) |
+| OpenAI API | Configured |
+| Firebase project | `minh-menh-ai-prod` (#202213348151) |
+| Firebase Auth providers | Not enabled (needs Console) |
+| Flutter iOS build | Working (`flutter build ios --simulator --no-codesign`) |
+| Flutter analyze | 0 issues |

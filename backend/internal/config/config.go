@@ -19,7 +19,8 @@ type Config struct {
 	OpenAIBaseURL     string
 	OpenAIModel       string
 	FirebaseProjectID string
-	AuthAllowDebug    bool
+	AuthAllowDebug     bool
+	ForceStubServices  bool
 	AppleBundleID     string
 	AppleIssuerID     string
 	AppleKeyID        string
@@ -53,7 +54,8 @@ func Load() Config {
 		OpenAIBaseURL:     getEnv("OPENAI_BASE_URL", "https://api.openai.com/v1"),
 		OpenAIModel:       getEnv("OPENAI_MODEL", "gpt-4.1-mini"),
 		FirebaseProjectID: getEnv("FIREBASE_PROJECT_ID", ""),
-		AuthAllowDebug:    getEnvBool("AUTH_ALLOW_DEBUG_BYPASS", false),
+		AuthAllowDebug:     getEnvBool("AUTH_ALLOW_DEBUG_BYPASS", false),
+		ForceStubServices:  getEnvBool("FORCE_STUB_SERVICES", false),
 		AppleBundleID:     getEnv("APPLE_BUNDLE_ID", ""),
 		AppleIssuerID:     getEnv("APPLE_ISSUER_ID", ""),
 		AppleKeyID:        getEnv("APPLE_KEY_ID", ""),

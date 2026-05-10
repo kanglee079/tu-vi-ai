@@ -137,3 +137,17 @@ flutter analyze
 ## License
 
 Private — All rights reserved.
+
+## Current Status (May 10, 2026)
+
+| Component | Status |
+|---|---|
+| Flutter iOS build | Working |
+| Flutter analyze | 0 issues |
+| Backend (local) | Running at `http://127.0.0.1:8080` |
+| Backend services | Stub mode (DB unreachable due to IPv6-only Supabase DNS) |
+| Database migrations | Not run (run manually via Supabase SQL Editor) |
+| Firebase Auth providers | Need to enable in Console |
+| IAP products | Paused — not configured yet |
+
+See [docs/PRODUCTION_RUNTIME.md](docs/PRODUCTION_RUNTIME.md) for full deployment checklist.
