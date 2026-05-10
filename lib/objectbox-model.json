@@ -1,0 +1,441 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7214849939856827600",
+      "lastPropertyId": "6:8403951346176235351",
+      "name": "AiConversationEntity",
+      "properties": [
+        {
+          "id": "1:5685252119997259433",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5311124231946785693",
+          "name": "conversationId",
+          "indexId": "1:5322487590774138348",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:8420710654784438094",
+          "name": "profileId",
+          "type": 9
+        },
+        {
+          "id": "4:730032932035050699",
+          "name": "scope",
+          "type": 9
+        },
+        {
+          "id": "5:7533527270278125534",
+          "name": "messagesJson",
+          "type": 9
+        },
+        {
+          "id": "6:8403951346176235351",
+          "name": "updatedAtEpochMs",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:3084805939216695113",
+      "lastPropertyId": "13:6324015001378441196",
+      "name": "BirthProfileEntity",
+      "properties": [
+        {
+          "id": "1:7713392161987756648",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2968584291484813986",
+          "name": "profileId",
+          "indexId": "2:8602170406040551771",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:3684174223468429631",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:2296421538829007489",
+          "name": "gender",
+          "type": 9
+        },
+        {
+          "id": "5:5410984272940670618",
+          "name": "calendarType",
+          "type": 9
+        },
+        {
+          "id": "6:5626898949475238432",
+          "name": "birthDateEpochMs",
+          "type": 6
+        },
+        {
+          "id": "7:4307332187189527937",
+          "name": "birthHourLabel",
+          "type": 9
+        },
+        {
+          "id": "8:3904124819717154219",
+          "name": "birthMinute",
+          "type": 6
+        },
+        {
+          "id": "9:1367391078754918604",
+          "name": "birthPlace",
+          "type": 9
+        },
+        {
+          "id": "10:8921380749159488049",
+          "name": "timezone",
+          "type": 9
+        },
+        {
+          "id": "11:4170744330848501019",
+          "name": "birthTimeConfidence",
+          "type": 9
+        },
+        {
+          "id": "12:4622382084317741833",
+          "name": "mainFocusJson",
+          "type": 9
+        },
+        {
+          "id": "13:6324015001378441196",
+          "name": "isMain",
+          "type": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:3035018864492799",
+      "lastPropertyId": "10:6605123374854475532",
+      "name": "ChartCacheEntity",
+      "properties": [
+        {
+          "id": "1:1680232419540582472",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1038039391353002594",
+          "name": "cacheKey",
+          "indexId": "3:3027275653452146475",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:3024910800333876217",
+          "name": "profileId",
+          "type": 9
+        },
+        {
+          "id": "4:2742494022959500720",
+          "name": "year",
+          "type": 6
+        },
+        {
+          "id": "5:8240880058288006251",
+          "name": "engineVersion",
+          "type": 9
+        },
+        {
+          "id": "6:7185823625621989999",
+          "name": "schemaVersion",
+          "type": 9
+        },
+        {
+          "id": "7:6510489921637633127",
+          "name": "snapshotHash",
+          "type": 9
+        },
+        {
+          "id": "8:193429910191602959",
+          "name": "snapshotJson",
+          "type": 9
+        },
+        {
+          "id": "9:7934855025616346974",
+          "name": "summaryJson",
+          "type": 9
+        },
+        {
+          "id": "10:6605123374854475532",
+          "name": "updatedAtEpochMs",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:6696205232324122087",
+      "lastPropertyId": "9:5252270761342260510",
+      "name": "JournalEntryEntity",
+      "properties": [
+        {
+          "id": "1:2142375132986797498",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:511794487210565900",
+          "name": "entryId",
+          "indexId": "4:2988437174491977857",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:333283266025190860",
+          "name": "profileId",
+          "type": 9
+        },
+        {
+          "id": "4:3784243889577580406",
+          "name": "createdAtLabel",
+          "type": 9
+        },
+        {
+          "id": "5:5995761461825953012",
+          "name": "createdAtEpochMs",
+          "type": 6
+        },
+        {
+          "id": "6:359324072664511776",
+          "name": "mood",
+          "type": 9
+        },
+        {
+          "id": "7:2838297002201591119",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "8:2741103919678459213",
+          "name": "body",
+          "type": 9
+        },
+        {
+          "id": "9:5252270761342260510",
+          "name": "sentimentLabel",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:6471313590470322193",
+      "lastPropertyId": "8:4073092565859604303",
+      "name": "PendingSyncOperationEntity",
+      "properties": [
+        {
+          "id": "1:1571105847141356862",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6766323429196878290",
+          "name": "operationId",
+          "indexId": "5:3965608819768417437",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:6459889079103322788",
+          "name": "entityType",
+          "type": 9
+        },
+        {
+          "id": "4:588909802796338172",
+          "name": "operationType",
+          "type": 9
+        },
+        {
+          "id": "5:128748988929636731",
+          "name": "payloadJson",
+          "type": 9
+        },
+        {
+          "id": "6:7647301707021254511",
+          "name": "createdAtEpochMs",
+          "type": 6
+        },
+        {
+          "id": "7:1689357015768224643",
+          "name": "lastAttemptAtEpochMs",
+          "type": 6
+        },
+        {
+          "id": "8:4073092565859604303",
+          "name": "attemptCount",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:4254405816044940971",
+      "lastPropertyId": "8:3901249359657998380",
+      "name": "UnlockContentEntity",
+      "properties": [
+        {
+          "id": "1:6282392890392517761",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1331804261498512350",
+          "name": "unlockKey",
+          "indexId": "6:686466458188735135",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:464837550299820645",
+          "name": "profileId",
+          "type": 9
+        },
+        {
+          "id": "4:7556630099026887475",
+          "name": "contentType",
+          "type": 9
+        },
+        {
+          "id": "5:1308405042862530048",
+          "name": "contentKey",
+          "type": 9
+        },
+        {
+          "id": "6:2348055993326926879",
+          "name": "unlockMethod",
+          "type": 9
+        },
+        {
+          "id": "7:590138103095176634",
+          "name": "coinSpent",
+          "type": 6
+        },
+        {
+          "id": "8:3901249359657998380",
+          "name": "createdAtEpochMs",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:4870267163242312720",
+      "lastPropertyId": "7:6120607296954138296",
+      "name": "WalletLedgerEntity",
+      "properties": [
+        {
+          "id": "1:5808927394710995300",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1786321438371148775",
+          "name": "entryId",
+          "indexId": "7:2270396026455495373",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:3634398225963179189",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:8607497403180614269",
+          "name": "amount",
+          "type": 6
+        },
+        {
+          "id": "5:4861433256517730561",
+          "name": "createdAtLabel",
+          "type": 9
+        },
+        {
+          "id": "6:2739802351716905808",
+          "name": "createdAtEpochMs",
+          "type": 6
+        },
+        {
+          "id": "7:6120607296954138296",
+          "name": "source",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:1454402424724474423",
+      "lastPropertyId": "6:5180451066744389878",
+      "name": "WalletSnapshotEntity",
+      "properties": [
+        {
+          "id": "1:992814226736439474",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8224877422167557759",
+          "name": "snapshotKey",
+          "indexId": "8:3901579788368243262",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:2379599736239130219",
+          "name": "balance",
+          "type": 6
+        },
+        {
+          "id": "4:1813563913611671290",
+          "name": "activePlanLabel",
+          "type": 9
+        },
+        {
+          "id": "5:7670273123080668662",
+          "name": "historyJson",
+          "type": 9
+        },
+        {
+          "id": "6:5180451066744389878",
+          "name": "updatedAtEpochMs",
+          "type": 6
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "8:1454402424724474423",
+  "lastIndexId": "8:3901579788368243262",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

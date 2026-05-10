@@ -1,0 +1,23 @@
+# Minh Mệnh AI - Product Requirements Document (PRD)
+
+## 1. Tầm nhìn sản phẩm
+- **Tên app:** Minh Mệnh AI
+- **Slogan:** Hiểu lá số, nắm vận trình, chọn ngày phù hợp và nhận luận giải cá nhân hóa bằng AI.
+- **Định vị:** App mệnh lý cá nhân hóa cao cấp, kết hợp Tử vi truyền thống và trí tuệ nhân tạo (AI).
+
+## 2. Các tính năng chính
+- Lập lá số Tử vi (12 cung, sao, vận hạn).
+- Luận giải cá nhân hóa bằng AI.
+- Xem ngày tốt xấu (Nhật vận/Nguyệt vận).
+- Theo dõi vận trình cá nhân (Life Map).
+- Hệ thống kiến thức Tử vi.
+- Ví xu và thanh toán IAP/Subscription.
+
+## 3. Cấu trúc ứng dụng (Sitemap)
+- **Onboarding:** Splash, Welcome, Tạo lá số nhanh.
+- **Auth:** Đăng nhập, Đăng ký, Social Login.
+- **Lá số:** Danh sách lá số, Chi tiết lá số (12 cung), Luận giải AI.
+- **Vận trình:** Đại vận, Tiểu vận, Nguyệt vận, Nhật vận.
+- **Xem ngày:** Lịch vạn niên, Ngày tốt xấu cá nhân hóa.
+- **Kiến thức:** Blog, bài viết học thuật.
+- **Cá nhân:** Ví xu, Cài đặt, Quản lý Profile.

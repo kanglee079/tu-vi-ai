@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Life Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1e1b13",
+                        "surface-container": "#221f16",
+                        "surface-container-high": "#2d2a20",
+                        "on-secondary-container": "#ff9f95",
+                        "on-tertiary-container": "#005030",
+                        "on-tertiary": "#003921",
+                        "surface-variant": "#38342b",
+                        "primary-container": "#d4af37",
+                        "on-tertiary-fixed": "#002111",
+                        "inverse-on-surface": "#343026",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#410003",
+                        "secondary": "#ffb4ac",
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#e9c349",
+                        "outline": "#99907c",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3d392f",
+                        "secondary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-fixed": "#78fbb6",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-lowest": "#110e06",
+                        "surface-container-highest": "#38342b",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e9e2d3",
+                        "inverse-primary": "#735c00",
+                        "tertiary-container": "#41c989",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#4d4635",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "on-secondary": "#690007",
+                        "surface": "#16130b",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#62e6a2",
+                        "secondary-container": "#960711",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-dim": "#16130b",
+                        "background": "#16130b",
+                        "inverse-surface": "#e9e2d3",
+                        "error-container": "#93000a",
+                        "on-background": "#e9e2d3",
+                        "on-primary": "#3c2f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "unit": "8px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["EB Garamond"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(34, 31, 22, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 0.5px solid rgba(212, 175, 55, 0.3);
+        }
+        .glow-line {
+            box-shadow: 0 0 10px rgba(242, 202, 80, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 border-b border-primary/20 flat no shadows flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-unit sticky z-40">
+<button class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 scale-95 duration-200 p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed">Minh Mệnh AI</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline/30 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWGXsYiFbjmlQ23CKDsRA8wUS6ftrkdjsFSG5PX-E_CjBwZpuwiRP7pg0bOyB34zK-u10GbA83ZtY_7wtDUYyr_bLgQevfANsnVm7wjsJKkn2njpz8XNbp0CkaOGTeUyulH_k8yrQgYh6XLFPp4V3ZTPFKrCl_crMzAYEr1Cgl321Tsfh1S2b-QS6eX5ILcCP_PK4bw8GzMLigGSFIKr9xgbcRUiu9EFPci-SeL2fT-_MG469lEM2QwNKwNBgV6nvM36VUzWv70eA"/>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-container-padding-mobile md:px-container-padding-desktop py-section-gap space-y-section-gap">
+<!-- Summary Card -->
+<section class="glass-panel rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">cyclone</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row gap-6 items-start md:items-center">
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h2 class="font-headline-md text-headline-md text-primary">Your Life Rhythm</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Your chart reveals a 'Late Blooming' pattern (Mệnh Vô Chính Diệu). Early years require patience and building foundations. Significant career breakthroughs align with the Fire element peaks starting at age 35. Maintain caution during Water element transitions to preserve wealth.
+                    </p>
+</div>
+<div class="w-full md:w-auto flex flex-row md:flex-col gap-4">
+<div class="glass-panel rounded-lg p-3 text-center flex-1">
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Peak Element</div>
+<div class="flex items-center justify-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span class="font-body-md text-body-md text-secondary">Fire (Hỏa)</span>
+</div>
+</div>
+<div class="glass-panel rounded-lg p-3 text-center flex-1">
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Current Cycle</div>
+<div class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">trending_up</span>
+<span class="font-body-md text-body-md text-tertiary">Growth (Age 25-34)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section class="relative">
+<!-- Central Line -->
+<div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant transform md:-translate-x-1/2 glow-line z-0"></div>
+<div class="space-y-12 relative z-10">
+<!-- Decade 1: 0-14 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full gap-6">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<div class="font-body-sm text-body-sm text-on-surface-variant">Foundation &amp; Learning</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">Tuổi Thơ</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+</div>
+<div class="pl-16 md:pl-12 md:w-1/2 w-full">
+<div class="glass-panel rounded-xl p-5 hover:bg-surface-container-high transition-colors duration-300">
+<div class="md:hidden mb-2">
+<span class="font-body-sm text-body-sm text-primary">Age 0 - 14</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Foundation</h3>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-container/10 p-2 rounded-lg">school</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Education Phase</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Focus on intellectual growth. A period supported by strong academic stars (Văn Xương, Văn Khúc).</p>
+<button class="font-label-md text-label-md text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors w-full md:w-auto">View Details</button>
+</div>
+</div>
+</div>
+<!-- Decade 2: 15-24 -->
+<div class="flex flex-col md:flex-row-reverse items-start md:items-center w-full gap-6">
+<div class="hidden md:block w-1/2 pl-12 text-left">
+<div class="font-body-sm text-body-sm text-on-surface-variant">Exploration &amp; Independence</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">Thanh Xuân</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-2 border-outline flex items-center justify-center z-10">
+<div class="w-3 h-3 rounded-full bg-on-surface-variant"></div>
+</div>
+<div class="pl-16 md:pl-0 md:pr-12 md:w-1/2 w-full">
+<div class="glass-panel rounded-xl p-5 hover:bg-surface-container-high transition-colors duration-300 opacity-80">
+<div class="md:hidden mb-2">
+<span class="font-body-sm text-body-sm text-primary">Age 15 - 24</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Exploration</h3>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-secondary bg-secondary-container/10 p-2 rounded-lg">explore</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Transition</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Navigating career choices. Minor fluctuations due to changing elemental balances.</p>
+<button class="font-label-md text-label-md text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors w-full md:w-auto">View Details</button>
+</div>
+</div>
+</div>
+<!-- Decade 3: 25-34 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full gap-6">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<div class="font-body-sm text-body-sm text-primary">Current Phase</div>
+<div class="font-headline-md text-headline-md text-primary mt-1">Career Growth</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-surface border-2 border-tertiary flex items-center justify-center z-10 shadow-[0_0_20px_rgba(65,201,137,0.5)]">
+<div class="w-4 h-4 rounded-full bg-tertiary animate-pulse"></div>
+</div>
+<div class="pl-16 md:pl-12 md:w-1/2 w-full">
+<div class="glass-panel rounded-xl p-5 border-tertiary/40 bg-surface-container/80 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-tertiary/10 blur-xl rounded-full"></div>
+<div class="md:hidden mb-2">
+<span class="font-body-sm text-body-sm text-tertiary">Current (Age 25 - 34)</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Growth</h3>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-container/10 p-2 rounded-lg">work</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Active Cycle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Strong upward momentum. Auspicious stars align for professional advancement and networking.</p>
+<button class="font-label-md text-label-md text-surface bg-tertiary rounded-lg px-4 py-2 hover:bg-tertiary/90 transition-colors w-full md:w-auto">View Details</button>
+</div>
+</div>
+</div>
+<!-- Decade 4: 35-44 -->
+<div class="flex flex-col md:flex-row-reverse items-start md:items-center w-full gap-6">
+<div class="hidden md:block w-1/2 pl-12 text-left">
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wealth &amp; Stability</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">Financial Peak</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center z-10">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+</div>
+<div class="pl-16 md:pl-0 md:pr-12 md:w-1/2 w-full">
+<div class="glass-panel rounded-xl p-5 hover:bg-surface-container-high transition-colors duration-300">
+<div class="md:hidden mb-2">
+<span class="font-body-sm text-body-sm text-primary">Age 35 - 44</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Financial Peak</h3>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary bg-primary-container/10 p-2 rounded-lg">account_balance</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Wealth Accummulation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Maximum earning potential. Excellent time for investments and asset building.</p>
+<button class="font-label-md text-label-md text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors w-full md:w-auto">View Details</button>
+</div>
+</div>
+</div>
+<!-- Decade 5: 45-54 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full gap-6">
+<div class="hidden md:block w-1/2 pr-12 text-right">
+<div class="font-body-sm text-body-sm text-error">Caution Advised</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">Consolidation</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-2 border-error flex items-center justify-center z-10">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+</div>
+<div class="pl-16 md:pl-12 md:w-1/2 w-full">
+<div class="glass-panel rounded-xl p-5 border-error/20 hover:bg-surface-container-high transition-colors duration-300">
+<div class="md:hidden mb-2">
+<span class="font-body-sm text-body-sm text-error">Age 45 - 54</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Consolidation</h3>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-error bg-error-container/10 p-2 rounded-lg">warning</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Preservation Phase</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Focus on maintaining health and securing assets. Avoid high-risk ventures.</p>
+<button class="font-label-md text-label-md text-primary border border-primary/30 rounded-lg px-4 py-2 hover:bg-primary/10 transition-colors w-full md:w-auto">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl border-t border-primary/10 shadow-sm bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined mb-1">temple_buddhist</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-3 py-1 Active: scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1 text-primary">auto_awesome</span>
+<span class="font-label-md text-label-md text-primary">Chart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined mb-1">event_note</span>
+<span class="font-label-md text-label-md">Calendar</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-md text-label-md">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+</body></html>

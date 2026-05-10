@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Mở Khóa</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration (Design System) -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1e1b13",
+                        "tertiary-fixed": "#78fbb6",
+                        "tertiary-container": "#41c989",
+                        "on-primary": "#3c2f00",
+                        "on-background": "#e9e2d3",
+                        "outline": "#99907c",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "tertiary": "#62e6a2",
+                        "surface-container-lowest": "#110e06",
+                        "surface-variant": "#38342b",
+                        "primary-container": "#d4af37",
+                        "on-secondary": "#690007",
+                        "secondary-container": "#960711",
+                        "on-secondary-fixed": "#410003",
+                        "on-surface": "#e9e2d3",
+                        "primary-fixed-dim": "#e9c349",
+                        "primary-fixed": "#ffe088",
+                        "background": "#16130b",
+                        "outline-variant": "#4d4635",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-on-surface": "#343026",
+                        "secondary": "#ffb4ac",
+                        "surface-container-high": "#2d2a20",
+                        "surface-container": "#221f16",
+                        "surface-container-highest": "#38342b",
+                        "surface-bright": "#3d392f",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#003921",
+                        "surface": "#16130b",
+                        "on-error": "#690005",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed": "#002111",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "primary": "#f2ca50",
+                        "on-primary-container": "#554300",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#735c00",
+                        "inverse-surface": "#e9e2d3",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "on-secondary-container": "#ff9f95",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#005030",
+                        "surface-dim": "#16130b",
+                        "secondary-fixed": "#ffdad6",
+                        "on-primary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "32px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["EB Garamond", "serif"],
+                        "headline-lg": ["EB Garamond", "serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "headline-md": ["EB Garamond", "serif"],
+                        "label-md": ["Manrope", "sans-serif"],
+                        "headline-xl": ["EB Garamond", "serif"],
+                        "body-sm": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen relative overflow-x-hidden selection:bg-primary/30 selection:text-primary-fixed">
+<!-- Ambient Background Glows (Glassmorphism Context) -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Top Action Bar (Close/Back) - Required for Transactional Screen -->
+<div class="fixed top-0 left-0 w-full p-4 z-50 flex justify-between items-center backdrop-blur-sm bg-background/50">
+<button aria-label="Close" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container border border-outline/10 transition-colors" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+<span class="font-label-md text-label-md text-primary-fixed uppercase tracking-widest opacity-80">Premium</span>
+</div>
+<!-- Main Checkout Container -->
+<main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-container-padding-mobile py-20 max-w-lg mx-auto w-full">
+<!-- Hero Graphic Anchor -->
+<div class="w-32 h-32 mb-8 rounded-full overflow-hidden border-[0.5px] border-primary-container shadow-[0_0_32px_rgba(212,175,55,0.15)] relative">
+<img alt="Astrological chart representation" class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="A highly detailed, elegant circular graphic representing an ancient oriental astrological chart, glowing softly against a pitch-black background. The design features intricate concentric geometric rings, celestial symbols, and subtle lotus motifs woven into the lines. Illuminated with a soft, ethereal Royal Gold and Jade Green gradient lighting, resembling a high-tech glass holographic projection. The mood is mystical, premium, and authoritative, embodying Oriental Futurism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWE-jGdWuHUSLJTb29ifjvhHBbEfR0Ihc84bZEn_SXwhks3JVG3JQ-lkWoILtYQjLoMgs3zlpL6bUaMm6eXOsXvaGrdoDCcVSEn9oS-k1en1XVlM3NlzvLvYpQpPjfSwhUXx_6CjcPUR1RwxzonBg6sTjStwP4MQ0FInm_Vtpd0ElwWBpQzGGkbStzRZsyHTRPx7CI4xE-4nti4V7jNtts2ROnxgl5_abDNnszmqTv92K5hoUdxIhW8Op8v2roxd24l_SiUnZysbs"/>
+<!-- Inner Ring Highlight -->
+<div class="absolute inset-0 border-2 border-primary-fixed/20 rounded-full pointer-events-none"></div>
+</div>
+<!-- Header Section -->
+<div class="text-center mb-section-gap space-y-4">
+<h1 class="font-headline-xl text-headline-xl text-primary-fixed">Mở Khóa Toàn Bộ Vận Mệnh</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm mx-auto">
+                Khám phá bản ngã sâu thẳm và nhận lời khuyên chiến lược từ AI trí tuệ học giả.
+            </p>
+</div>
+<!-- Benefits Card (Glassmorphism Bento Style) -->
+<div class="w-full bg-surface-container/60 backdrop-blur-xl border border-outline/20 rounded-xl p-6 shadow-[0_0_24px_rgba(0,0,0,0.1)] relative overflow-hidden mb-section-gap">
+<!-- Subtle Watermark -->
+<div class="absolute -bottom-8 -right-8 opacity-5 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">auto_awesome</span>
+</div>
+<ul class="space-y-4 relative z-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold mb-1">Luận giải chi tiết bởi AI</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Phân tích chuyên sâu 12 cung sao với độ chính xác cao.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold mb-1">Xuất PDF lưu trữ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tải xuống báo cáo trọn bộ định dạng cao cấp.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold mb-1">Trải nghiệm không quảng cáo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Không gian tĩnh tại, tập trung tuyệt đối vào bản mệnh.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold mb-1">Quyền truy cập vĩnh viễn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mở khóa một lần, xem lại lá số này bất cứ lúc nào.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Action / Pricing Area -->
+<div class="w-full space-y-4">
+<!-- Primary CTA -->
+<button class="w-full group relative flex items-center justify-center p-0.5 rounded-xl bg-gradient-to-r from-primary-fixed-dim via-primary to-primary-container overflow-hidden transition-transform hover:scale-[1.01] active:scale-[0.99] shadow-[0_4px_20px_rgba(212,175,55,0.2)]">
+<!-- Inner Button Surface -->
+<div class="w-full h-full flex flex-col items-center justify-center py-4 px-6 rounded-[10px] bg-surface-container-lowest/10 backdrop-blur-sm">
+<span class="font-label-md text-label-md text-on-primary-fixed mb-1 uppercase tracking-wider opacity-90">Mở khóa trọn bộ</span>
+<span class="font-headline-md text-headline-md text-on-primary-container font-semibold">229,000 VND</span>
+</div>
+<!-- Shine effect overlay -->
+<div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+</button>
+<!-- Divider -->
+<div class="flex items-center gap-4 py-2">
+<div class="flex-1 h-px bg-outline/20"></div>
+<span class="font-label-md text-label-md text-outline-variant">HOẶC</span>
+<div class="flex-1 h-px bg-outline/20"></div>
+</div>
+<!-- Secondary Alternative CTA (Ghost Style) -->
+<button class="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl border border-primary-container/30 bg-surface-container-low text-primary-fixed font-label-md text-label-md hover:bg-surface-container hover:border-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+                Mở khóa bằng 500 Xu
+            </button>
+</div>
+<!-- Trust Signals & Footer Links -->
+<div class="w-full mt-section-gap flex flex-col items-center gap-6">
+<div class="flex justify-center gap-8 w-full">
+<div class="flex flex-col items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">lock</span>
+<span class="font-body-sm text-body-sm text-center">Giao dịch<br/>bảo mật</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+<span class="font-body-sm text-body-sm text-center">Hoàn tiền<br/>trong 24h</span>
+</div>
+</div>
+<button class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors underline decoration-outline/30 underline-offset-4 mt-2">
+                Khôi phục giao dịch
+            </button>
+</div>
+</main>
+<style>
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</body></html>

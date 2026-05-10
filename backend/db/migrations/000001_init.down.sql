@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS idempotency_keys;
+DROP TABLE IF EXISTS knowledge_articles;
+DROP TABLE IF EXISTS ai_requests;
+DROP TABLE IF EXISTS wallet_ledger;
+DROP TABLE IF EXISTS entitlements;
+DROP TABLE IF EXISTS iap_purchases;
+DROP TABLE IF EXISTS iap_products;
+DROP TABLE IF EXISTS chart_snapshots;
+DROP TABLE IF EXISTS profiles;
+DROP TABLE IF EXISTS users;

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Đăng Nhập</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=EB+Garamond:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1e1b13",
+                        "tertiary-fixed": "#78fbb6",
+                        "tertiary-container": "#41c989",
+                        "on-primary": "#3c2f00",
+                        "on-background": "#e9e2d3",
+                        "outline": "#99907c",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "tertiary": "#62e6a2",
+                        "surface-container-lowest": "#110e06",
+                        "surface-variant": "#38342b",
+                        "primary-container": "#d4af37",
+                        "on-secondary": "#690007",
+                        "secondary-container": "#960711",
+                        "on-secondary-fixed": "#410003",
+                        "on-surface": "#e9e2d3",
+                        "primary-fixed-dim": "#e9c349",
+                        "primary-fixed": "#ffe088",
+                        "background": "#16130b",
+                        "outline-variant": "#4d4635",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-on-surface": "#343026",
+                        "secondary": "#ffb4ac",
+                        "surface-container-high": "#2d2a20",
+                        "surface-container": "#221f16",
+                        "surface-container-highest": "#38342b",
+                        "surface-bright": "#3d392f",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#003921",
+                        "surface": "#16130b",
+                        "on-error": "#690005",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-fixed": "#002111",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "primary": "#f2ca50",
+                        "on-primary-container": "#554300",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#735c00",
+                        "inverse-surface": "#e9e2d3",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "on-secondary-container": "#ff9f95",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#005030",
+                        "surface-dim": "#16130b",
+                        "secondary-fixed": "#ffdad6",
+                        "on-primary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "32px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["EB Garamond"],
+                        "label-md": ["Manrope"],
+                        "headline-xl": ["EB Garamond"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 27, 19, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .bg-ethereal {
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-ethereal">
+<!-- Ethereal Background Image -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none" data-alt="A subtle, dark atmospheric background evoking oriental futurism. Deep midnight blues intertwine with faint, glowing gold nebulae and subtle geometric constellations. The aesthetic is serene, mystical, and highly advanced, resembling a high-tech silk scroll or a cosmic astrolabe projection in a dark room. Soft, diffused lighting enhances the glassmorphism UI overlay." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB22x6pmfCk0N77nBHRouHigiAlYP7wJynhYF1Al4FlePNYsBi99K-Sk0hkqbMFHlBm5FLksMfmyr5vjY74U4-dzRPEuEnt2b0s_kYQSf_TjMHzmdQM7w-iGMQ_4WDsSj4tIxVzlRoRvFg96aR5_ckORvNXm8wWG4WUYdNn_OAUR0BL4_JxCRo6RPnBKJZMCG0bpzEgHXCt4eWHbDAcx5JzSZNh0dm7HbVtNeYvrcXKtdjRhWJmg-dr-KSI42QQcw2aV-zCNodDci8'); background-size: cover; background-position: center;">
+</div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-md px-container-padding-mobile md:px-container-padding-desktop z-10 flex flex-col items-center">
+<!-- Brand / Logo Area -->
+<div class="mb-section-gap flex flex-col items-center text-center">
+<div class="w-20 h-20 mb-6 rounded-full glass-panel flex items-center justify-center text-primary border border-primary/20 shadow-[0_0_24px_rgba(212,175,55,0.1)]">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-fixed mb-2 tracking-tight">Minh Mệnh AI</h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">Khám Phá Bản Mệnh Của Bạn</h2>
+</div>
+<!-- Auth Card -->
+<div class="w-full glass-panel rounded-xl p-8 shadow-2xl flex flex-col gap-4 relative overflow-hidden">
+<!-- Decorative Watermark -->
+<div class="absolute -bottom-10 -right-10 text-primary opacity-5 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 150px;">filter_vintage</span>
+</div>
+<!-- Social Buttons -->
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary/30 transition-all duration-300 text-on-surface font-body-md text-body-md group">
+<img alt="Google" class="w-5 h-5 group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi2_q7_-rDAkwkWOGoJn5StHHCdDRbxLHvVLvYUZ4REJSStORH8-st0aluUzPjSclbNgzdmZdGBcaM_dDMrG5BD4rBpuzZdhFfY_A9x6g0IGzDCr9B7oPnqlARAwhV8RQJqKrXlKgZe7EPwdjtp6gKtz0TQhx9HJQaDFmtP1PslBmUl3MT4mZczqKDwmTxJX3ilAjfEe_nZznwv6DKiLHBHQZCIg-TSn_tG-gpZf8nbiULhbH6uxL7mL2rZ7vVQc4RMqEGdonNMwE"/>
+<span>Tiếp tục với Google</span>
+</button>
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary/30 transition-all duration-300 text-on-surface font-body-md text-body-md group">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">ios</span>
+<span>Tiếp tục với Apple</span>
+</button>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-2">
+<div class="h-px bg-outline-variant flex-1"></div>
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Hoặc</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<!-- Email Login -->
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300 text-primary font-body-md text-body-md">
+<span class="material-symbols-outlined text-xl">mail</span>
+<span>Tiếp tục với Email</span>
+</button>
+<!-- Guest Link -->
+<div class="mt-6 text-center">
+<a class="inline-flex items-center gap-2 text-body-sm font-body-sm text-tertiary hover:text-tertiary-fixed transition-colors" href="#">
+<span>Trải nghiệm dưới quyền Khách</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-section-gap text-center text-label-md font-label-md text-on-surface-variant flex flex-wrap justify-center gap-x-4 gap-y-2 opacity-80">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</main>
+</body></html>

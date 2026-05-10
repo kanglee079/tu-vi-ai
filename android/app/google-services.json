@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "202213348151",
+    "project_id": "minh-menh-ai-prod",
+    "storage_bucket": "minh-menh-ai-prod.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202213348151:android:79bfa95e1668f622c480b2",
+        "android_client_info": {
+          "package_name": "ai.minhmenh.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuSxEoMnN7buQRBcNsdHoiVSy_gtcAMag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

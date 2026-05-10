@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Xem Ngày Tốt Xấu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#343026",
+                        "inverse-surface": "#e9e2d3",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#ff9f95",
+                        "outline-variant": "#4d4635",
+                        "surface-container-low": "#1e1b13",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "outline": "#99907c",
+                        "on-background": "#e9e2d3",
+                        "on-tertiary-fixed": "#002111",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e9e2d3",
+                        "surface-dim": "#16130b",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#110e06",
+                        "background": "#16130b",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "tertiary": "#62e6a2",
+                        "on-tertiary-container": "#005030",
+                        "on-secondary": "#690007",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "tertiary-fixed": "#78fbb6",
+                        "secondary": "#ffb4ac",
+                        "surface-container-highest": "#38342b",
+                        "secondary-fixed": "#ffdad6",
+                        "surface": "#16130b",
+                        "on-primary-fixed-variant": "#574500",
+                        "secondary-container": "#960711",
+                        "surface-container-high": "#2d2a20",
+                        "on-secondary-fixed": "#410003",
+                        "surface-container": "#221f16",
+                        "on-tertiary": "#003921",
+                        "surface-variant": "#38342b",
+                        "inverse-primary": "#735c00",
+                        "on-error": "#690005",
+                        "tertiary-container": "#41c989",
+                        "surface-bright": "#3d392f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-xl": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-sm": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            background-image: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(34, 31, 22, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 0.5px solid theme('colors.outline-variant');
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(242, 202, 80, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md min-h-screen flex flex-col pb-safe">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl text-primary dark:text-primary-fixed font-headline-md text-headline-md docked full-width top-0 border-b border-primary/20 sticky z-40">
+<div class="flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-unit h-16">
+<button class="hover:text-primary transition-colors duration-300 scale-95 duration-200 p-2 -ml-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed">Minh Mệnh AI</h1>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex items-center justify-center">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder image showing a subtle, serene landscape at twilight in a dark, oriental futurism style, harmonizing with a mystic deep midnight blue and faint gold color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5oXBwGA-MfG2DuFM1j0wxRBs83sHBUZKWNoM-GCsmUWU9-JsGiBLJDNUFtsuneXSMDPYvQA32xZUnappsKwoQqb-QX2zpzKQpgCbdtgxzz-K71JQ87NvHolZ7VVDObISTuESDJdSg9lFQgiidpariOaRPJSGS7E9m22l9WUlbq40LmnZli1C6hGYyyGA73GErA6OQbi0DzsHxNU4LaLY7xAHkgi1UK2XRUO34xOw46_geExfK6b9vhe56k_eESFqv6zIi_E2_uw"/>
+</div>
+</div>
+</header>
+<main class="flex-grow px-container-padding-mobile md:px-container-padding-desktop py-section-gap max-w-5xl mx-auto w-full flex flex-col gap-section-gap">
+<!-- Date Header Section -->
+<section class="flex flex-col items-center justify-center text-center space-y-4">
+<div class="flex items-center space-x-4 text-on-surface-variant">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary-fixed-dim">Tháng 10, 2023</span>
+<h2 class="font-headline-xl text-headline-xl text-primary">Ngày 24</h2>
+<span class="font-body-md text-body-md text-on-surface-variant mt-1">Thứ Ba</span>
+</div>
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<!-- Lunar Date -->
+<div class="inline-flex items-center justify-center px-6 py-2 rounded-full glass-card border-primary/30 gold-glow">
+<span class="font-body-lg text-body-lg text-on-surface">Âm lịch: <span class="font-headline-md text-headline-md text-primary-fixed ml-2">10/9</span> Năm Quý Mão</span>
+</div>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-unit md:gap-gutter">
+<!-- Primary Astrological Info -->
+<div class="md:col-span-8 glass-card rounded-xl p-6 relative overflow-hidden flex flex-col justify-between">
+<!-- Watermark -->
+<div class="absolute -bottom-10 -right-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px] text-primary">motion_photos_auto</span>
+</div>
+<div class="flex justify-between items-start mb-6 z-10 relative">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-fixed flex items-center gap-2">
+<span class="material-symbols-outlined">wb_sunny</span>
+                            Chi Tiết Ngày
+                        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Thông tin can chi và tiết khí</p>
+</div>
+<div class="px-3 py-1 bg-surface-container-highest rounded-full border border-outline-variant">
+<span class="font-label-md text-label-md text-primary-fixed-dim uppercase">Tiết Sương Giáng</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 z-10 relative">
+<div class="p-4 bg-surface/40 rounded-lg border border-outline-variant/50">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Ngày</span>
+<span class="font-headline-md text-headline-md text-on-surface">Giáp Tý</span>
+</div>
+<div class="p-4 bg-surface/40 rounded-lg border border-outline-variant/50">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Tháng</span>
+<span class="font-headline-md text-headline-md text-on-surface">Nhâm Tuất</span>
+</div>
+<div class="p-4 bg-surface/40 rounded-lg border border-outline-variant/50">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Trực</span>
+<span class="font-headline-md text-headline-md text-primary">Kiến</span>
+</div>
+<div class="p-4 bg-surface/40 rounded-lg border border-outline-variant/50">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Sao chủ</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed-dim">Tỉnh</span>
+</div>
+</div>
+</div>
+<!-- Personalized AI Insights -->
+<div class="md:col-span-4 flex flex-col gap-unit md:gap-gutter">
+<!-- Good Day Score -->
+<div class="glass-card rounded-xl p-6 flex flex-col items-center justify-center relative overflow-hidden flex-1 border-tertiary-container/30">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary-container/10 to-transparent pointer-events-none"></div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wide mb-4 z-10 relative">Độ Hợp Mệnh</h4>
+<div class="relative w-24 h-24 flex items-center justify-center mb-2 z-10 relative">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-tertiary-fixed" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="font-headline-lg text-headline-lg text-tertiary-fixed">85%</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary-fixed z-10 relative">Đại Cát</span>
+</div>
+<!-- Conflict Warning -->
+<div class="glass-card rounded-xl p-5 border-error/20 flex items-center gap-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-error/5 to-transparent pointer-events-none"></div>
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center flex-shrink-0 z-10 relative">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="z-10 relative">
+<h4 class="font-label-md text-label-md text-error uppercase mb-1">Xung Khắc</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tuổi Ngọ cần cẩn trọng trong giao tiếp hôm nay.</p>
+</div>
+</div>
+</div>
+<!-- Dos and Don'ts -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-unit md:gap-gutter">
+<!-- Nên Làm -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-tertiary-fixed">
+<h4 class="font-headline-md text-headline-md text-tertiary-fixed flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined">check_circle</span>
+                        Việc Nên Làm
+                    </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px] mt-0.5">storefront</span>
+<span class="font-body-md text-body-md text-on-surface">Khai trương, mở cửa hàng</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px] mt-0.5">draw</span>
+<span class="font-body-md text-body-md text-on-surface">Ký kết hợp đồng, giao dịch lớn</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px] mt-0.5">diversity_3</span>
+<span class="font-body-md text-body-md text-on-surface">Cầu tài, gặp gỡ đối tác quan trọng</span>
+</li>
+</ul>
+</div>
+<!-- Kiêng Kỵ -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-error">
+<h4 class="font-headline-md text-headline-md text-error flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined">cancel</span>
+                        Việc Cần Tránh
+                    </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">foundation</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Động thổ, sửa chữa nhà cửa</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">sailing</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Xuất hành đi xa hướng Tây Bắc</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl text-primary dark:text-primary-fixed font-label-md text-label-md fixed bottom-0 w-full z-50 rounded-t-xl border-t border-primary/10 shadow-sm md:hidden">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe h-16">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">temple_buddhist</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span>Chart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-3 py-1 w-20" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">event_note</span>
+<span>Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span>Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>Profile</span>
+</a>
+</div>
+</nav>
+<!-- Spacer for fixed bottom nav on mobile -->
+<div class="h-20 md:hidden"></div>
+</body></html>

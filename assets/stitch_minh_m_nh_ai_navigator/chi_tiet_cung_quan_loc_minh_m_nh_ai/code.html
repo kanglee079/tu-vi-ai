@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết Cung Quan Lộc - Minh Mệnh AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#343026",
+                        "inverse-surface": "#e9e2d3",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#ff9f95",
+                        "outline-variant": "#4d4635",
+                        "surface-container-low": "#1e1b13",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "outline": "#99907c",
+                        "on-background": "#e9e2d3",
+                        "on-tertiary-fixed": "#002111",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e9e2d3",
+                        "surface-dim": "#16130b",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#110e06",
+                        "background": "#16130b",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "tertiary": "#62e6a2",
+                        "on-tertiary-container": "#005030",
+                        "on-secondary": "#690007",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "tertiary-fixed": "#78fbb6",
+                        "secondary": "#ffb4ac",
+                        "surface-container-highest": "#38342b",
+                        "secondary-fixed": "#ffdad6",
+                        "surface": "#16130b",
+                        "on-primary-fixed-variant": "#574500",
+                        "secondary-container": "#960711",
+                        "surface-container-high": "#2d2a20",
+                        "on-secondary-fixed": "#410003",
+                        "surface-container": "#221f16",
+                        "on-tertiary": "#003921",
+                        "surface-variant": "#38342b",
+                        "inverse-primary": "#735c00",
+                        "on-error": "#690005",
+                        "tertiary-container": "#41c989",
+                        "surface-bright": "#3d392f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-xl": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-sm": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(34, 31, 22, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 0.5px solid rgba(212, 175, 55, 0.3);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md bg-pattern min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 border-b border-primary/20 sticky z-50">
+<div class="flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-unit">
+<button aria-label="Back" class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md tracking-tight text-primary dark:text-primary-fixed text-center flex-1">
+                Cung Quan Lộc
+            </div>
+<button aria-label="Share" class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+</div>
+</header>
+<main class="px-container-padding-mobile md:px-container-padding-desktop pt-6 max-w-4xl mx-auto space-y-section-gap">
+<!-- Hero Section: Score & Overview -->
+<section class="flex flex-col items-center text-center space-y-4">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<!-- Circular progress placeholder -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="rgba(212, 175, 55, 0.2)" stroke-width="2"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="#f2ca50" stroke-dasharray="283" stroke-dashoffset="42" stroke-width="4"></circle>
+</svg>
+<div class="flex flex-col items-center">
+<span class="font-headline-xl text-headline-xl text-primary">85</span>
+<span class="font-label-md text-label-md text-primary/70 uppercase">Điểm Cát Hóa</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Cung Quan Lộc của bạn hội tụ nhiều sao tốt, cho thấy sự nghiệp có tiềm năng phát triển mạnh mẽ nếu biết tận dụng cơ hội và kiên trì.
+            </p>
+</section>
+<!-- Main Stars & Elements -->
+<section class="flex flex-wrap gap-3 justify-center">
+<div class="px-4 py-1.5 rounded-full border border-tertiary/30 bg-tertiary/10 text-tertiary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stars</span> Tử Vi (Miếu)
+            </div>
+<div class="px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stars</span> Thiên Phủ (Vượng)
+            </div>
+<div class="px-4 py-1.5 rounded-full border border-error/30 bg-error/10 text-error font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span> Hóa Kỵ (Hãm)
+            </div>
+</section>
+<!-- Bento Grid Layout for Details -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Tóm tắt 3 ý chính -->
+<div class="glass-card rounded-xl p-6 md:col-span-2 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-2xl transition-all duration-500 group-hover:bg-primary/10"></div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Tổng Quan Sự Nghiệp
+                </h2>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">adjust</span>
+<span>Đường công danh rộng mở, đặc biệt thuận lợi khi làm việc trong các tổ chức lớn hoặc nhà nước.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">adjust</span>
+<span>Năng lực lãnh đạo thiên bẩm, dễ dàng thăng tiến lên các vị trí quản lý cấp cao.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">adjust</span>
+<span>Tuy nhiên, do sự hiện diện của Hóa Kỵ, cần đề phòng thị phi và tiểu nhân chọc phá chốn công sở.</span>
+</li>
+</ul>
+</div>
+<!-- Điểm mạnh -->
+<div class="glass-card rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-tertiary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">trending_up</span>
+                    Lợi Thế Tuyệt Đối
+                </h3>
+<div class="space-y-4">
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Tầm Nhìn Xa</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Khả năng hoạch định chiến lược xuất sắc, nhìn nhận vấn đề bao quát nhờ ảnh hưởng của Tử Vi.</p>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Tài Chính Ổn Định</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Thiên Phủ mang đến lộc khí, thu nhập từ công việc chính rất vững chắc và có xu hướng tăng trưởng đều đặn.</p>
+</div>
+</div>
+</div>
+<!-- Thử thách -->
+<div class="glass-card rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-error mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">gpp_bad</span>
+                    Góc Khuất &amp; Thử Thách
+                </h3>
+<div class="space-y-4">
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Áp Lực Dư Luận</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hóa Kỵ khiến bạn dễ vướng vào những lời đồn thổi vô căn cứ, cần rèn luyện bản lĩnh tinh thần thép.</p>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Cứng Nhắc Trong Quản Lý</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Đôi khi quá bảo thủ với ý kiến cá nhân, dẫn đến khó khăn trong việc phối hợp với đội ngũ trẻ.</p>
+</div>
+</div>
+</div>
+<!-- Lời khuyên từ AI -->
+<div class="glass-card rounded-xl p-6 md:col-span-2 border-l-4 border-l-primary relative">
+<h3 class="font-headline-md text-headline-md text-primary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined">psychology</span>
+                    Lời Khuyên Thực Chiến từ Minh Mệnh AI
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                    Trong giai đoạn 2024-2025, bạn nên tập trung vào việc củng cố các mối quan hệ nội bộ hơn là mở rộng ra ngoài. Dù có cơ hội chuyển việc hấp dẫn, hãy cân nhắc kỹ về môi trường văn hóa. Hãy áp dụng chiến lược "Lạt mềm buộc chặt" khi xử lý các mâu thuẫn công sở do Hóa Kỵ gây ra.
+                </p>
+<div class="flex justify-end mt-4">
+<button class="bg-primary/20 hover:bg-primary/30 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat_spark</span>
+                        Hỏi thêm AI về lộ trình thăng tiến
+                    </button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

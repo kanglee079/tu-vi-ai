@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Profile &amp; Charts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#343026",
+                        "inverse-surface": "#e9e2d3",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#ff9f95",
+                        "outline-variant": "#4d4635",
+                        "surface-container-low": "#1e1b13",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "outline": "#99907c",
+                        "on-background": "#e9e2d3",
+                        "on-tertiary-fixed": "#002111",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e9e2d3",
+                        "surface-dim": "#16130b",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#110e06",
+                        "background": "#16130b",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "tertiary": "#62e6a2",
+                        "on-tertiary-container": "#005030",
+                        "on-secondary": "#690007",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "tertiary-fixed": "#78fbb6",
+                        "secondary": "#ffb4ac",
+                        "surface-container-highest": "#38342b",
+                        "secondary-fixed": "#ffdad6",
+                        "surface": "#16130b",
+                        "on-primary-fixed-variant": "#574500",
+                        "secondary-container": "#960711",
+                        "surface-container-high": "#2d2a20",
+                        "on-secondary-fixed": "#410003",
+                        "surface-container": "#221f16",
+                        "on-tertiary": "#003921",
+                        "surface-variant": "#38342b",
+                        "inverse-primary": "#735c00",
+                        "on-error": "#690005",
+                        "tertiary-container": "#41c989",
+                        "surface-bright": "#3d392f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-xl": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-sm": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(45, 42, 32, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 0.5px solid rgba(212, 175, 55, 0.3);
+        }
+        .bg-pattern-watermark {
+            background-image: radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 border-b border-primary/20 sticky z-40">
+<div class="flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-unit h-16">
+<button class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed">Minh Mệnh AI</h1>
+<button class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 scale-95 duration-200">
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-primary/30" data-alt="A small, circular avatar portrait of an Asian scholar with subtle glowing gold outlines, matching the Oriental Futurism aesthetic, deep blue background with faint star patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTohsc2TcPkq0_5sRMYdvbw1sshriHCnlWHbZosig3cFrxp-AVCHEfufl_57da9YPZznh1nkbmuqh9RIR6ecAZebxewHIdaeGars0amOlhUuT7Iu3FunDN2WRZXeHW43xi-mfUu2ZL54JCn3OodvxFidK_kgHJGo_DBHBJuOyyiRgXX5amFK3bfOjDcV80k2M0eK3NYnmkG47hy8RMn7UFdHU__D-e41EQIOXeaUiNPHULXmtHjzfLZoaYqzTWJCV6TVlwMLSESmo"/>
+</button>
+</div>
+<!-- Web Top Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex justify-center space-x-8 pb-3 px-container-padding-desktop">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">temple_buddhist</span> Home
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span> Chart
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">event_note</span> Calendar
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span> Library
+            </a>
+<a class="text-primary dark:text-primary-fixed hover:text-primary transition-colors duration-300 font-label-md text-label-md flex items-center gap-2 relative after:content-[''] after:absolute after:-bottom-3 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">person</span> Profile
+            </a>
+</nav>
+</header>
+<main class="flex-grow px-container-padding-mobile md:px-container-padding-desktop py-section-gap max-w-7xl mx-auto w-full space-y-section-gap">
+<!-- User Profile Header -->
+<section class="glass-card rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 bg-pattern-watermark relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="relative">
+<img alt="Profile Picture" class="w-24 h-24 rounded-full border-2 border-primary/50 p-1" data-alt="A glowing portrait avatar placeholder. Deep midnight blue background with subtle stardust particles. A golden glowing circular ring frames the area. Serene, scholarly mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVx4np5px4h7TlzeB6dfPbof2Tvtv-uMfIC4abFgbpxUICzpwVTx4YZdxMAwWyWv8QRYBK1ynAPRZVNcn_iA_QpR8wdcgJRm-hZV1zcTT5XzXIMpiRWpiR1mZhlaKoAnVT8EihAY6JiXpeRZx5TwrlH9VAa93L_ptR5haK_9n5uefJLY7OhvWmakGv0LENAejVowjo-is7C06Nunyvp4u0-cKp9hU8Y32aZZZd_RUGQ0tlJH4dnknp1dZQ0Rp3G2iulJ6dW1iBCks"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary px-2 py-0.5 rounded-full border border-secondary/30 font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">military_tech</span> VIP
+                </div>
+</div>
+<div class="text-center md:text-left flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary-fixed mb-1">Thiên Sư Huyền Cơ</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center md:justify-start gap-1">
+<span class="material-symbols-outlined text-[16px]">mail</span> huyen.co@minhmenh.ai
+                </p>
+<div class="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary">diamond</span> 1,250 Tokens
+                    </span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_awesome</span> Bậc Thầy
+                    </span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex flex-col gap-2 w-full md:w-auto">
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md hover:bg-primary-fixed transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit Profile
+                </button>
+</div>
+</section>
+<!-- Saved Charts List -->
+<section class="space-y-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-primary border-b border-primary/30 pb-2 inline-block">Hồ Sơ Lá Số</h3>
+<button class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary hover:bg-primary-container/20 border border-outline-variant transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Chart Card 1 (Main) -->
+<div class="glass-card rounded-xl p-5 relative group border-primary/50">
+<div class="absolute top-0 right-0 p-3 flex gap-2">
+<span class="px-2 py-0.5 bg-primary-container/20 text-primary-fixed rounded text-[10px] font-bold tracking-wider border border-primary/30">LÁ SỐ CHÍNH</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-lg text-on-surface mb-1">Nguyễn Văn Bản Mệnh</h4>
+<div class="flex flex-col gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_month</span> 15/08/1990 (Dương)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 08:30 Sáng (Thìn)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">wc</span> Nam Mạng</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex justify-between items-center">
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary mt-1.5 shadow-[0_0_8px_rgba(98,230,162,0.6)]"></span>
+<span class="font-label-md text-label-md text-tertiary">Mệnh Mộc</span>
+</div>
+<button class="text-primary hover:text-primary-fixed font-label-md text-label-md flex items-center gap-1 transition-colors">
+                            Xem Chi Tiết <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Chart Card 2 -->
+<div class="glass-card rounded-xl p-5 relative group">
+<div class="absolute top-0 right-0 p-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary border border-outline-variant">
+<span class="material-symbols-outlined text-[24px]">face_3</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-lg text-on-surface mb-1">Trần Thị Phối Ngẫu</h4>
+<div class="flex flex-col gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_month</span> 22/11/1992 (Dương)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 14:15 Chiều (Mùi)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">wc</span> Nữ Mạng</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-error mt-1.5 shadow-[0_0_8px_rgba(255,180,171,0.6)]"></span>
+<span class="font-label-md text-label-md text-error">Mệnh Hỏa</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center gap-1 transition-colors">
+                                Xem <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<button class="w-full py-1.5 rounded bg-surface-container border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary/50 font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">star</span> Đặt làm lá số chính
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Settings List -->
+<section class="mt-8">
+<h3 class="font-headline-md text-headline-md text-primary border-b border-primary/30 pb-2 mb-6 inline-block">Cài Đặt &amp; Tuỳ Chọn</h3>
+<div class="glass-card rounded-xl overflow-hidden divide-y divide-outline-variant/30">
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface">Thông báo</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Quản lý cảnh báo sao hạn, ngày tốt xấu</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface">Ngôn ngữ</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tiếng Việt</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface">Điều khoản &amp; Bảo mật</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Chính sách lưu trữ dữ liệu lá số</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<button class="w-full flex items-center justify-center p-4 hover:bg-error-container/20 transition-colors group text-error">
+<span class="material-symbols-outlined mr-2">logout</span>
+<span class="font-body-md text-body-md">Đăng xuất</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-primary/10 shadow-sm fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">temple_buddhist</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-label-md text-label-md">Chart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">event_note</span>
+<span class="font-label-md text-label-md">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-md text-label-md">Library</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-3 py-1 hover:opacity-100 transition-opacity scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

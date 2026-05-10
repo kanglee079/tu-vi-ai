@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minh Mệnh AI - Knowledge Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Public Sans"],
+                        "display": ["Public Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-50 text-gray-900 pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-white/80 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-40 flex justify-between items-center w-full px-4 md:px-8 py-4">
+<button class="text-gray-900 hover:text-blue-600 transition-colors duration-300 scale-95 duration-200 focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline text-xl font-bold tracking-tight text-gray-900">Minh Mệnh AI</h1>
+<div class="h-8 w-8 rounded-full bg-gray-200 overflow-hidden shadow-sm flex items-center justify-center border border-gray-300">
+<span class="material-symbols-outlined text-gray-500 text-sm">person</span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-8">
+<!-- Search Section -->
+<div class="mb-10">
+<h2 class="text-3xl font-display font-extrabold text-gray-900 mb-6">Knowledge Library</h2>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-blue-600 transition-colors">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl bg-white shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-lg transition-all duration-300" placeholder="Search for stars, palaces, or concepts..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<button class="p-2 text-gray-400 hover:text-blue-600 focus:outline-none rounded-lg transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Categories/Tags -->
+<div class="mb-12">
+<h3 class="text-sm font-label font-bold text-gray-500 uppercase tracking-wider mb-4">Categories</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2.5 rounded-full bg-blue-50 text-blue-700 font-medium text-sm border border-blue-200 hover:bg-blue-100 transition-colors">Cơ bản</button>
+<button class="px-5 py-2.5 rounded-full bg-white text-gray-700 font-medium text-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Nâng cao</button>
+<button class="px-5 py-2.5 rounded-full bg-white text-gray-700 font-medium text-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Chính tinh</button>
+<button class="px-5 py-2.5 rounded-full bg-white text-gray-700 font-medium text-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Phụ tinh</button>
+<button class="px-5 py-2.5 rounded-full bg-white text-gray-700 font-medium text-sm border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Vận hạn</button>
+</div>
+</div>
+<!-- Trending Searches (Bento Grid Style) -->
+<div class="mb-12">
+<h3 class="text-xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500">trending_up</span>
+                Trending Topics
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 relative rounded-xl overflow-hidden shadow-md group cursor-pointer aspect-[2/1] md:aspect-auto h-48">
+<img alt="Mystical night sky with stars and a glowing constellation diagram" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed illustration of a mystical night sky filled with glowing stars and intricate constellation diagrams. The scene is illuminated by soft, ethereal moonlight that creates a serene, magical atmosphere. The color palette relies on deep indigo blues and pristine white highlights, fitting perfectly within a refined, premium aesthetic. The overall mood is contemplative and deeply connected to ancient astrological traditions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG-esEXQtPMUMFbZHUtOYFunj47zl6XZ4xve00RV44XSSuJdG-zuO5kzP04iPUy1zAYdpknJobjtm4f5_mRyrjvPWWKzTnBxfZ87GZUSQTStKVnYRfCCmKkaQbCglld1GgJQaFtvpXh8RMhpc_vFVwmwcadKt3eIMiuGzvqqxjxZnXWGjtY65QMk0A2AvJnccJ2dSb5fIYS0Xs9UumS-Pk8gcqrbN-N3_ptiIGLHW0YFCafVYfbOLT2hh460gNXO0l0ujUjpMg2TU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5">
+<span class="inline-block px-2 py-1 bg-blue-500/80 backdrop-blur-md text-white text-xs font-bold rounded mb-2">Chính tinh</span>
+<h4 class="text-white font-bold text-xl leading-tight">Tử Vi Đẩu Số: Giải mã 14 Chính tinh</h4>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-md group cursor-pointer bg-white border border-gray-100 flex flex-col justify-center p-6 h-48 hover:border-blue-300 transition-colors">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 text-blue-600">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h4 class="text-gray-900 font-bold text-lg mb-2">Cung Mệnh &amp; Thân</h4>
+<p class="text-sm text-gray-500 line-clamp-2">Sự khác biệt cốt lõi và cách luận giải cơ bản.</p>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-md group cursor-pointer bg-white border border-gray-100 flex flex-col justify-center p-6 h-48 hover:border-blue-300 transition-colors">
+<div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-4 text-purple-600">
+<span class="material-symbols-outlined">cycle</span>
+</div>
+<h4 class="text-gray-900 font-bold text-lg mb-2">Đại Vận &amp; Tiểu Hạn</h4>
+<p class="text-sm text-gray-500 line-clamp-2">Cách tính toán và ảnh hưởng đến lá số tử vi.</p>
+</div>
+<div class="md:col-span-2 relative rounded-xl overflow-hidden shadow-md group cursor-pointer bg-gradient-to-br from-gray-800 to-gray-900 p-6 h-48 flex items-end">
+<div class="absolute top-0 right-0 p-6 opacity-20">
+<span class="material-symbols-outlined text-8xl text-white">menu_book</span>
+</div>
+<div class="relative z-10 w-full">
+<div class="flex justify-between items-center mb-2">
+<span class="inline-block px-2 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold rounded">Nâng cao</span>
+<span class="material-symbols-outlined text-white/50">arrow_forward</span>
+</div>
+<h4 class="text-white font-bold text-xl leading-tight">Tuần Triệt lộ không vong: Bí ẩn và giải đáp</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Recently Viewed -->
+<div>
+<h3 class="text-xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500">history</span>
+                Recently Viewed
+            </h3>
+<div class="space-y-4">
+<div class="group bg-white border border-gray-200 rounded-xl p-4 flex gap-4 items-center shadow-sm hover:shadow-md hover:border-blue-300 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-gray-100 flex-shrink-0 overflow-hidden relative">
+<img alt="Abstract ancient scroll texture" class="w-full h-full object-cover" data-alt="A close-up shot of an ancient, weathered parchment scroll resting on a dark wooden table. Soft, warm directional light highlights the rich textures of the paper and faded ink marks. The aesthetic leans heavily into a sophisticated, historical light-mode style with subtle golden undertones. The mood is scholarly, mysterious, and inviting, perfectly suited for an arcane library interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ZNat5v1AOjRbxmTRPiWYQNPe7hSYvLYI5O_J3AnRnzIWlnIuybmqbvcJlfeZEfiWo5HmnS6mKDPBn-lbpLecvut9z1aXqw6YMRVSbQUKkxAfHmewrTcoEDrkSL6s_J2OLLu2LNCWb1vrz7NdECNgKQW4AC8HfjYtFgtS1KA9B9dOuq6SeKe70m7SdJbu45A_mFdmQv7aiOGnAh_9dWwLvsMSv8YhHJlzgrfkngZNkDARDCxVsKKh-CKuVvp_lLfEQV_23ZNpS7U"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-base font-bold text-gray-900 truncate group-hover:text-blue-600 transition-colors">Sao Thái Dương trong Tử Vi</h4>
+<p class="text-sm text-gray-500 truncate mt-1">Ý nghĩa cơ bản và sự tương tác tại các cung.</p>
+</div>
+<div class="hidden sm:flex text-xs text-gray-400 items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span>
+                        2h ago
+                    </div>
+</div>
+<div class="group bg-white border border-gray-200 rounded-xl p-4 flex gap-4 items-center shadow-sm hover:shadow-md hover:border-blue-300 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-indigo-50 flex-shrink-0 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-base font-bold text-gray-900 truncate group-hover:text-blue-600 transition-colors">Cung Quan Lộc</h4>
+<p class="text-sm text-gray-500 truncate mt-1">Sự nghiệp và đường công danh trong lá số.</p>
+</div>
+<div class="hidden sm:flex text-xs text-gray-400 items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span>
+                        Yesterday
+                    </div>
+</div>
+<div class="group bg-white border border-gray-200 rounded-xl p-4 flex gap-4 items-center shadow-sm hover:shadow-md hover:border-blue-300 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-orange-50 flex-shrink-0 flex items-center justify-center text-orange-400">
+<span class="material-symbols-outlined text-3xl">star</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-base font-bold text-gray-900 truncate group-hover:text-blue-600 transition-colors">Sao Thiên Cơ</h4>
+<p class="text-sm text-gray-500 truncate mt-1">Trí tuệ, mưu lược và sự biến động.</p>
+</div>
+<div class="hidden sm:flex text-xs text-gray-400 items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">schedule</span>
+                        3 days ago
+                    </div>
+</div>
+</div>
+<button class="mt-6 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1 w-full justify-center py-2">
+                View all history
+                <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/90 backdrop-blur-2xl border-t border-gray-200 shadow-sm rounded-t-xl z-50">
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">temple_buddhist</span>
+<span class="font-label text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">auto_awesome</span>
+<span class="font-label text-[10px]">Chart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">event_note</span>
+<span class="font-label text-[10px]">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 bg-blue-50 rounded-xl px-4 py-1.5 Active: scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label text-[10px] font-medium">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-label text-[10px]">Profile</span>
+</a>
+</nav>
+<!-- Web Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-20 bg-white border-r border-gray-200 flex-col items-center py-6 z-30">
+<div class="mt-16 flex flex-col gap-8 w-full">
+<a class="w-full flex flex-col items-center justify-center text-gray-500 hover:text-blue-600 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">temple_buddhist</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="w-full flex flex-col items-center justify-center text-gray-500 hover:text-blue-600 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="text-[10px] font-medium">Chart</span>
+</a>
+<a class="w-full flex flex-col items-center justify-center text-gray-500 hover:text-blue-600 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">event_note</span>
+<span class="text-[10px] font-medium">Calendar</span>
+</a>
+<a class="w-full flex flex-col items-center justify-center text-blue-600 relative" href="#">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-r-full"></div>
+<div class="bg-blue-50 w-12 h-12 rounded-xl flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<span class="text-[10px] font-medium mt-1">Library</span>
+</a>
+<a class="w-full flex flex-col items-center justify-center text-gray-500 hover:text-blue-600 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<style>
+        @media (min-width: 768px) {
+            main { padding-left: 6rem; }
+        }
+    </style>
+</body></html>

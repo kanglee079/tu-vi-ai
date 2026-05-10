@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compatibility - Minh Mệnh AI</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1e1b13",
+                        "surface-container": "#221f16",
+                        "surface-container-high": "#2d2a20",
+                        "on-secondary-container": "#ff9f95",
+                        "on-tertiary-container": "#005030",
+                        "on-tertiary": "#003921",
+                        "surface-variant": "#38342b",
+                        "primary-container": "#d4af37",
+                        "on-tertiary-fixed": "#002111",
+                        "inverse-on-surface": "#343026",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#410003",
+                        "secondary": "#ffb4ac",
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#e9c349",
+                        "outline": "#99907c",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3d392f",
+                        "secondary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-fixed": "#78fbb6",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-lowest": "#110e06",
+                        "surface-container-highest": "#38342b",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary": "#f2ca50",
+                        "on-surface": "#e9e2d3",
+                        "inverse-primary": "#735c00",
+                        "tertiary-container": "#41c989",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#4d4635",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "on-secondary": "#690007",
+                        "surface": "#16130b",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "on-secondary-fixed-variant": "#92030f",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#62e6a2",
+                        "secondary-container": "#960711",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-dim": "#16130b",
+                        "background": "#16130b",
+                        "inverse-surface": "#e9e2d3",
+                        "error-container": "#93000a",
+                        "on-background": "#e9e2d3",
+                        "on-primary": "#3c2f00"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "16px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "40px",
+                        "unit": "8px",
+                        "section-gap": "32px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["EB Garamond"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Ambient Background Glows -->
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-1/4 -left-[20%] w-[60vw] h-[60vw] bg-primary-container/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 -right-[20%] w-[50vw] h-[50vw] bg-secondary-container/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-primary/20 sticky top-0 z-40 w-full">
+<div class="flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-unit h-[64px]">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed">Minh Mệnh AI</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30">
+<img alt="User Profile Profile" class="w-full h-full object-cover" data-alt="A subtle, high-quality profile portrait of an elegant individual, shot with soft, dramatic studio lighting against a dark, moody background. The image evokes a sense of mystery and sophistication, aligning with an oriental futurism aesthetic. Warm gold rim lighting highlights their features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCemGfT7RT6E7ew7qApUClwV4HnhgTZiT4UteXKlnotMTDKwbrobfEcqIiuhhHgT3nscGrpqkx2rA5g1LBZ5RJn6i6dtMTYCJbZRctZjeuq0Rw0bKAmNQ1NoJGsNCJ2zOGIrKfNhmNPTsWjdD4GkvUrjGSoaIL2wQMxQTQ-kId1BED1aLJMVhC16iQ584QV2MhYF_P_oGaDYRiGwZ5n9_J-dR4KM0TnJxBBrlwCJUEKUFs20VhKHdBDSLXDkZtnO0uUShNQDK8Py3U"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-container-padding-mobile md:px-container-padding-desktop py-section-gap pb-[100px] flex flex-col gap-section-gap max-w-[1200px] mx-auto w-full">
+<!-- Screen Title -->
+<div class="text-center">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">So sánh lá số</h2>
+<p class="font-body-md text-on-surface-variant">Phân tích sự giao thoa năng lượng giữa hai bản thể</p>
+</div>
+<!-- Profile Selection / Balance Area -->
+<div class="relative w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 py-8">
+<!-- Connecting Line (Desktop) / Background elements -->
+<div class="absolute inset-0 flex items-center justify-center -z-10 opacity-30">
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent hidden md:block"></div>
+<div class="w-[1px] h-full bg-gradient-to-b from-transparent via-primary to-transparent md:hidden"></div>
+</div>
+<!-- Profile 1 -->
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full p-1 border border-primary/40 bg-surface/50 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.1)] relative">
+<img alt="Profile 1" class="w-full h-full object-cover rounded-full" data-alt="A subtle, high-quality profile portrait of an elegant individual, shot with soft, dramatic studio lighting against a dark, moody background. Warm gold rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDT60VQYsCd5zJDrS9EUZya7RQRoZLdmls707ByRqXxODUdXCV5cz0-ktztUMb6OZoGsZrOC5EfJCYIZRzjIrypLUM0KIfjgNEw8vl-jSTT_VVC_8_gPbMCcnlBKUr0Z5XueibbKYn3bROtZO-cKvjH_ZSfVd0JngAbCxHazTpsLKaQ7PlIt0NnYmkOJd2LGWnBWUmT0YO3C93y4MpSbERuP1zHQEW843FTjxJ8R7ox533ERqdO6xunUr_ThuVAhwKeQA__GDOOy8"/>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-surface-container-high border border-primary/30 px-3 py-1 rounded-full whitespace-nowrap">
+<span class="font-label-md text-label-md text-primary">Mệnh Thủy</span>
+</div>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Minh Thư</h3>
+<p class="font-body-sm text-on-surface-variant">Bản thân</p>
+</div>
+</div>
+<!-- Balance Symbol -->
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border border-secondary/50 shadow-[0_0_30px_rgba(150,7,17,0.3)] z-10 relative">
+<span class="material-symbols-outlined text-[32px] text-secondary" style="font-variation-settings: 'FILL' 1;">all_inclusive</span>
+</div>
+<!-- Profile 2 -->
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full p-1 border border-secondary/40 bg-surface/50 backdrop-blur-md shadow-[0_0_20px_rgba(150,7,17,0.1)] relative cursor-pointer hover:border-secondary transition-colors">
+<img alt="Profile 2" class="w-full h-full object-cover rounded-full" data-alt="A striking portrait of a determined individual, illuminated by moody, deep red and subtle gold lighting against a pitch-black background. The lighting accentuates their strong facial features, creating an intense, futuristic scholar aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbaapUisrK7bFszn_UXvVkIdzaRaXJk4j4wPk4iJFjWZGeU2aY0s0jMmZ9GEaVIqZXa4rWqxo0yjrfDXDzq-ZHg3LFGt8WqmNgEMVP9wcXPc7Li107GDsDpiLMCK8H7rGyf6BvxGEzDe69mchV5z67_CmTtSPafLzUcZnRcIALpTNkkHAxS2A7TwSFYcDWLsSIcuPDdoU52XtVtI21X9tjwMgLbAOoB9Wd6G-H7AtsfSGrK391ogf_ZE_ndkFBqXVNGs1TuctgWp0"/>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-surface-container-high border border-secondary/30 px-3 py-1 rounded-full whitespace-nowrap">
+<span class="font-label-md text-label-md text-secondary">Mệnh Hỏa</span>
+</div>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Hoàng Anh</h3>
+<p class="font-body-sm text-on-surface-variant">Đối tác</p>
+</div>
+</div>
+</div>
+<!-- Dashboard Layout: Score & Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-container-padding-desktop">
+<!-- Overall Score Circular Gauge -->
+<div class="lg:col-span-5 bg-surface-container-low/60 backdrop-blur-xl border border-outline-variant/30 rounded-[24px] p-8 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[120px] text-primary">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8">Độ Hợp Tuổi Tổng Quan</h3>
+<div class="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+<!-- SVG Circular Progress -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="4"></circle>
+<!-- 78% progress calculation: 2 * pi * 45 = 282.7. 78% of 282.7 = 220.5 -->
+<circle class="text-primary" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="282.7" stroke-dashoffset="62.2" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-xl text-[48px] md:text-[64px] leading-none text-primary font-bold">78%</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-2 tracking-widest uppercase">Khá Tốt</span>
+</div>
+</div>
+</div>
+<!-- Breakdown Categories -->
+<div class="lg:col-span-7 flex flex-col gap-unit">
+<!-- Category 1: Tình cảm -->
+<div class="bg-surface-container/50 backdrop-blur-md border border-outline-variant/20 rounded-xl p-6 flex flex-col justify-center h-full">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary border border-secondary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface text-[20px]">Tình Cảm</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary">85%</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary-container to-secondary rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Category 2: Công việc -->
+<div class="bg-surface-container/50 backdrop-blur-md border border-outline-variant/20 rounded-xl p-6 flex flex-col justify-center h-full">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">work</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface text-[20px]">Công Việc</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">60%</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-fixed-dim to-primary rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Category 3: Quan điểm -->
+<div class="bg-surface-container/50 backdrop-blur-md border border-outline-variant/20 rounded-xl p-6 flex flex-col justify-center h-full">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary border border-tertiary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface text-[20px]">Quan Điểm Sống</span>
+</div>
+<span class="font-headline-md text-headline-md text-tertiary">90%</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-tertiary rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Persona Summary Bento -->
+<div class="bg-surface-container-low/80 backdrop-blur-2xl border border-primary/20 rounded-[24px] p-6 md:p-10 relative overflow-hidden">
+<!-- Decorative Watermark -->
+<div class="absolute -top-10 -right-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px] text-primary">menu_book</span>
+</div>
+<div class="flex items-center gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary text-[32px]">auto_awesome</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">Luận Giải Của AI</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Strengths -->
+<div>
+<h4 class="font-headline-md text-headline-md text-tertiary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                        Điểm Tương Hợp
+                    </h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Sự kết hợp giữa năng lượng Thủy và Hỏa trong trường hợp này tạo ra một lực hút mãnh liệt. Về mặt tình cảm và quan điểm sống, hai bạn có sự bù trừ hoàn hảo. Trực giác tinh nhạy của Thủy bổ sung cho sự nhiệt huyết, quyết đoán của Hỏa, tạo nên những cuộc trò chuyện sâu sắc và sự thấu hiểu không cần lời.
+                    </p>
+</div>
+<!-- Conflicts -->
+<div>
+<h4 class="font-headline-md text-headline-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+                        Tiềm Năng Xung Đột
+                    </h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Trong công việc, xung khắc bản mệnh bắt đầu bộc lộ. Hỏa thích hành động nhanh và đôi khi bốc đồng, trong khi Thủy có xu hướng phân tích, suy nghĩ kỹ trước khi tiến bước. Điều này dễ dẫn đến những bất đồng trong việc ra quyết định đầu tư hoặc định hướng phát triển chiến lược chung.
+                    </p>
+</div>
+</div>
+<!-- Harmonize -->
+<div class="mt-8 bg-primary-container/10 border border-primary/30 rounded-xl p-6 relative">
+<div class="absolute top-0 left-6 -translate-y-1/2 bg-surface px-3 py-1 border border-primary/30 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">wb_incandescent</span>
+<span class="font-label-md text-label-md text-primary tracking-widest">CÁCH HÓA GIẢI</span>
+</div>
+<p class="font-body-md text-on-surface mt-2 leading-relaxed">
+                    Để cân bằng, cả hai cần thiết lập ranh giới rõ ràng trong công việc. Hãy để Hỏa đảm nhiệm vai trò tiên phong, mở rộng quan hệ; trong khi Thủy nắm giữ vị trí quản lý rủi ro và chiến lược hậu cần. Sử dụng thêm yếu tố Mộc (như cây xanh, màu sắc xanh lá) trong không gian làm việc chung để làm cầu nối sinh khí giữa Thủy và Hỏa.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 dark:bg-surface/90 backdrop-blur-2xl shadow-sm md:hidden">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe border-t border-primary/10">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[24px]">temple_buddhist</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<!-- Active Tab: Chart -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-3 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md mt-1">Chart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[24px]">event_note</span>
+<span class="font-label-md text-label-md mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="font-label-md text-label-md mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
