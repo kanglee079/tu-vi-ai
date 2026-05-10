@@ -24,6 +24,18 @@ class PalaceRouteArgs {
   final String profileId;
   final int year;
   final String palaceKey;
+
+  PalaceRouteArgs copyWith({
+    String? profileId,
+    int? year,
+    String? palaceKey,
+  }) {
+    return PalaceRouteArgs(
+      profileId: profileId ?? this.profileId,
+      year: year ?? this.year,
+      palaceKey: palaceKey ?? this.palaceKey,
+    );
+  }
 }
 
 class FortuneRouteArgs {

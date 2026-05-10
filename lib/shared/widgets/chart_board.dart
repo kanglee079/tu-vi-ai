@@ -46,7 +46,14 @@ class _ChartBoardState extends State<ChartBoard>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),
-    )..repeat(reverse: true);
+    );
+    _pulseController.addStatusListener((AnimationStatus status) {
+      // Stop after one complete pulse cycle so pumpAndSettle can settle in tests.
+      if (status == AnimationStatus.completed) {
+        _pulseController.stop();
+      }
+    });
+    _pulseController.forward();
   }
 
   @override

@@ -7,6 +7,8 @@
 
 library;
 
+import '../models/knowledge_models.dart';
+
 // ============================================================
 // PALACE MEANINGS — 12 Cung Tử Vi
 // ============================================================
@@ -1050,3 +1052,464 @@ class FiveElementKnowledge {
   final List<String> suitableProfessions;
   final String advice;
 }
+
+// ============================================================
+// COMBINATION RULES — Star + Palace interaction rules
+// ============================================================
+
+final List<CombinationRule> combinationRules = <CombinationRule>[
+  // --- Quan Lộc combinations ---
+  CombinationRule(
+    id: 'thai_duong_quan_loc',
+    condition: const CombinationCondition(
+      palaceKey: 'quan_loc',
+      stars: <String>['Thái Dương'],
+    ),
+    meaning:
+        'Công việc có xu hướng minh bạch, dẫn dắt và được công nhận. '
+        'Hợp vai trò cần uy tín và trách nhiệm.',
+    risk: 'Dễ tự áp lực, muốn kiểm soát quá nhiều.',
+    advice: 'Chọn mục tiêu rõ, ưu tiên hợp tác thay vì làm một mình.',
+    evidence: 'Cung Quan Lộc có Thái Dương — sao chủ về danh vị và sự rõ ràng.',
+    impact: 'high',
+    confidence: 0.78,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'thien_phu_quan_loc',
+    condition: const CombinationCondition(
+      palaceKey: 'quan_loc',
+      stars: <String>['Thiên Phủ'],
+    ),
+    meaning:
+        'Công việc được hỗ trợ bởi quý nhân và cơ hội đến từ người khác. '
+        'Có thể nhận được sự giúp đỡ đúng lúc.',
+    risk: 'Có thể quá phụ thuộc vào người khác thay vì tự tạo cơ hội.',
+    advice: 'Đón nhận hỗ trợ nhưng vẫn giữ chủ động trong quyết định quan trọng.',
+    evidence: 'Quan Lộc có Thiên Phủ — sao quý nhân, che chở.',
+    impact: 'high',
+    confidence: 0.75,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'liem_trinh_quan_loc',
+    condition: const CombinationCondition(
+      palaceKey: 'quan_loc',
+      stars: <String>['Liêm Trinh'],
+    ),
+    meaning:
+        'Công việc đòi hỏi sự ngay thẳng và trung thực. '
+        'Được tin tưởng vì sự nhất quán.',
+    risk: 'Thẳng thắn quá mức có thể gây xung đột không cần thiết.',
+    advice: 'Giữ nguyên tắc nhưng khéo léo trong cách diễn đạt.',
+    evidence: 'Quan Lộc có Liêm Trinh — sao ngay thẳng, chính trực.',
+    impact: 'medium',
+    confidence: 0.72,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'that_sat_quan_loc',
+    condition: const CombinationCondition(
+      palaceKey: 'quan_loc',
+      stars: <String>['Thất Sát'],
+    ),
+    meaning:
+        'Công việc có thể trải qua giai đoạn thay đổi lớn hoặc xung đột. '
+        'Nhưng nếu vượt qua: trở nên mạnh mẽ hơn.',
+    risk: 'Quyết định vội vàng trong giai đoạn căng thẳng gây hậu quả.',
+    advice: 'Cần bình tĩnh, thu thập đủ thông tin trước khi hành động quyết liệt.',
+    evidence: 'Quan Lộc có Thất Sát — sao sát phạt, xung đột, quyết đoán.',
+    impact: 'high',
+    confidence: 0.70,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Tài Bạch combinations ---
+  CombinationRule(
+    id: 'vu_khuc_tai_bach',
+    condition: const CombinationCondition(
+      palaceKey: 'tai_bach',
+      stars: <String>['Vũ Khúc'],
+    ),
+    meaning:
+        'Tài chính thiên về kỷ luật, tích lũy và quản lý hiệu quả. '
+        'Có khả năng giữ dòng tiền ổn định.',
+    risk: 'Quá tiết kiệm bỏ qua trải nghiệm đáng giá hoặc cơ hội đầu tư.',
+    advice: 'Cân bằng giữa tích lũy và đầu tư có kiểm soát.',
+    evidence: 'Tài Bạch có Vũ Khúc — sao kim, kỷ luật, tài chính.',
+    impact: 'medium',
+    confidence: 0.74,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'tai_duong_tai_bach',
+    condition: const CombinationCondition(
+      palaceKey: 'tai_bach',
+      stars: <String>['Thái Dương'],
+    ),
+    meaning:
+        'Tài chính có xu hướng minh bạch, công khai và có nguồn thu rõ ràng. '
+        'Thu nhập đến từ năng lực bản thân.',
+    risk: 'Chi tiêu vì muốn thể hiện có thể gây lãng phí.',
+    advice: 'Giữ thu nhập minh bạch, chi tiêu có kế hoạch.',
+    evidence: 'Tài Bạch có Thái Dương — sao dương hỏa, minh bạch, công danh.',
+    impact: 'medium',
+    confidence: 0.71,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'thien_tuong_tai_bach',
+    condition: const CombinationCondition(
+      palaceKey: 'tai_bach',
+      stars: <String>['Thiên Tướng'],
+    ),
+    meaning:
+        'Tài chính gắn với danh vị và vị trí xã hội. '
+        'Thu nhập có thể đến từ vai trò lãnh đạo hoặc công việc có ảnh hưởng.',
+    risk: 'Chi cho hình thức quá nhiều, bất ổn nếu danh vị lung lay.',
+    advice: 'Giữ tài chính độc lập với danh vị, xây dựng tài sản không phụ thuộc chức vụ.',
+    evidence: 'Tài Bạch có Thiên Tướng — sao quyền lực, tổ chức.',
+    impact: 'medium',
+    confidence: 0.69,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Phu Thê combinations ---
+  CombinationRule(
+    id: 'thai_yin_phu_the',
+    condition: const CombinationCondition(
+      palaceKey: 'phu_the',
+      stars: <String>['Thái Âm'],
+    ),
+    meaning:
+        'Tình cảm nhạy cảm, dịu dàng và nuông chiều. '
+        'Có duyên với người có cùng tần số cảm xúc.',
+    risk: 'Cảm xúc dao động mạnh, dễ tổn thương khi bị phê phán.',
+    advice: 'Học cách kiểm soát cảm xúc, đặt ranh giới rõ ràng trong quan hệ.',
+    evidence: 'Phu Thê có Thái Âm — sao âm thủy, nhạy cảm, nghệ thuật.',
+    impact: 'high',
+    confidence: 0.76,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'liem_trinh_phu_the',
+    condition: const CombinationCondition(
+      palaceKey: 'phu_the',
+      stars: <String>['Liêm Trinh'],
+    ),
+    meaning:
+        'Tình cảm đòi hỏi sự trung thành và ngay thẳng. '
+        'Không chấp nhận sự mập mờ hay lừa dối.',
+    risk: 'Quá nguyên tắc trong quan hệ khiến đối phương áp lực.',
+    advice: 'Cần đối tác ngay thẳng, nhưng cũng cần học cách linh hoạt trong giao tiếp.',
+    evidence: 'Phu Thê có Liêm Trinh — sao liêm, chính, đòi hỏi trung thực.',
+    impact: 'medium',
+    confidence: 0.72,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'thien_dong_phu_the',
+    condition: const CombinationCondition(
+      palaceKey: 'phu_the',
+      stars: <String>['Thiên Đồng'],
+    ),
+    meaning:
+        'Tình cảm trẻ trung, nhiều trải nghiệm và giao tiếp tốt. '
+        'Được nhiều người yêu mến.',
+    risk: 'Thiếu chiều sâu trong quan hệ, dễ thay đổi khi chưa chắc chắn.',
+    advice: 'Cần thời gian để xây dựng chiều sâu trong quan hệ thay vì chạy theo mới.',
+    evidence: 'Phu Thê có Thiên Đồng — sao thủy, trẻ trung, di chuyển, học hỏi.',
+    impact: 'medium',
+    confidence: 0.68,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Mệnh combinations ---
+  CombinationRule(
+    id: 'thai_duong_thien_phu_menh',
+    condition: const CombinationCondition(
+      palaceKey: 'menh',
+      stars: <String>['Thái Dương', 'Thiên Phủ'],
+    ),
+    meaning:
+        'Có tinh thần rõ ràng, chủ động và biết giữ nguồn lực. '
+        'Hợp vai trò cần uy tín, tổ chức và trách nhiệm.',
+    risk: 'Dễ tự đặt tiêu chuẩn cao, đôi khi chậm chia sẻ áp lực.',
+    advice: 'Chọn mục tiêu dài hạn, chia nhỏ trách nhiệm và giữ lịch hồi phục đều.',
+    evidence: 'Mệnh có nhóm sao thiên về minh bạch, trách nhiệm và quản trị nguồn lực.',
+    impact: 'high',
+    confidence: 0.78,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'that_sat_menh',
+    condition: const CombinationCondition(
+      palaceKey: 'menh',
+      stars: <String>['Thất Sát'],
+    ),
+    meaning:
+        'Có sức mạnh quyết đoán và dám đối đầu thử thách. '
+        'Không sợ hãi trước khó khăn.',
+    risk: 'Bạo dạn quá mức dẫn đến thất bại không cần thiết.',
+    advice: 'Dùng sức mạnh quyết đoán có chọn lọc — chỉ khi đã có thông tin đủ.',
+    evidence: 'Mệnh có Thất Sát — sao dương hỏa, sát phạt, quyết đoán.',
+    impact: 'high',
+    confidence: 0.73,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'tham_lang_menh',
+    condition: const CombinationCondition(
+      palaceKey: 'menh',
+      stars: <String>['Tham Lang'],
+    ),
+    meaning:
+        'Có chiều sâu tâm linh, suy tư nội tâm mạnh và nghệ thuật. '
+        'Có sức hút bí ẩn thu hút người khác.',
+    risk: 'Cô đơn khi không ai hiểu nỗi lòng sâu sắc, dễ chìm trong suy nghĩ tiêu cực.',
+    advice: 'Dùng chiều sâu nội tâm để phát triển bản thân, chia sẻ khi cần.',
+    evidence: 'Mệnh có Tham Lang — sao âm thủy, tham lam, nghệ thuật, tâm linh.',
+    impact: 'medium',
+    confidence: 0.70,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Diện Trạch combinations ---
+  CombinationRule(
+    id: 'thien_phu_dien_trach',
+    condition: const CombinationCondition(
+      palaceKey: 'dien_trach',
+      stars: <String>['Thiên Phủ'],
+    ),
+    meaning:
+        'Nhà cửa và tài sản được quý nhân hỗ trợ. '
+        'Có duyên với bất động sản hoặc được người khác giúp đỡ về nhà cửa.',
+    risk: 'Quá bận tâm về nhà cửa bỏ qua phát triển bản thân.',
+    advice: 'Nhà là nền tảng, nhưng không phải gánh nặng. Biết buông bỏ khi cần.',
+    evidence: 'Điền Trạch có Thiên Phủ — sao che chở, quý nhân, tài lộc.',
+    impact: 'medium',
+    confidence: 0.71,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Thiên Di combinations ---
+  CombinationRule(
+    id: 'thien_dong_thien_di',
+    condition: const CombinationCondition(
+      palaceKey: 'thien_di',
+      stars: <String>['Thiên Đồng'],
+    ),
+    meaning:
+        'Di chuyển, học hỏi và giao tiếp rất thuận lợi. '
+        'Cơ hội đến từ nhiều hướng khác nhau.',
+    risk: 'Phân tán quá nhiều hướng, không có trọng tâm rõ ràng.',
+    advice: 'Chọn một hướng chính để tập trung thay vì ôm tất cả.',
+    evidence: 'Thiên Di có Thiên Đồng — sao thủy, trẻ trung, di chuyển, học hỏi.',
+    impact: 'medium',
+    confidence: 0.73,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Tật Ách combinations ---
+  CombinationRule(
+    id: 'thai_duong_that_ach',
+    condition: const CombinationCondition(
+      palaceKey: 'tat_ach',
+      stars: <String>['Thái Dương'],
+    ),
+    meaning:
+        'Sức khỏe có xu hướng năng động, có thể chịu được áp lực cao. '
+        'Nhưng cũng dễ bị căng thẳng ở vai và gáy.',
+    risk: 'Ép bản thân quá sức dẫn đến kiệt sức.',
+    advice: 'Tập thể dục đều đặn, ngủ đủ giấc, không ép bản thân liên tục.',
+    evidence: 'Tật Ách có Thái Dương — sao dương hỏa, năng lượng cao.',
+    impact: 'medium',
+    confidence: 0.68,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Cát tinh quý nhân combinations ---
+  CombinationRule(
+    id: 'ta_phu_menh',
+    condition: const CombinationCondition(
+      palaceKey: 'menh',
+      stars: <String>['Tả Phù'],
+    ),
+    meaning:
+        'Được quý nhân tả phía giúp đỡ. '
+        'Có người hỗ trợ vô điều kiện trong giai đoạn khó khăn.',
+    risk: 'Quá phụ thuộc vào quý nhân, thiếu tự lập khi không có người giúp.',
+    advice: 'Biết ơn nhưng tự xây dựng năng lực bản thân.',
+    evidence: 'Mệnh có Tả Phù — phụ tinh quý nhân, che chở, ân huệ.',
+    impact: 'medium',
+    confidence: 0.74,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+  CombinationRule(
+    id: 'huu_bat_quan_loc',
+    condition: const CombinationCondition(
+      palaceKey: 'quan_loc',
+      stars: <String>['Hữu Bật'],
+    ),
+    meaning:
+        'Công việc được tăng thêm may mắn và duyên. '
+        'Gần người tốt giúp thăng tiến nhanh hơn.',
+    risk: 'May mắn có thể làm chủ quan, bỏ qua chuẩn bị kỹ.',
+    advice: 'Tận dụng may mắn để tạo giá trị, đừng lãng phí cơ hội.',
+    evidence: 'Quan Lộc có Hữu Bật — phụ tinh quý nhân, may mắn, duyên.',
+    impact: 'medium',
+    confidence: 0.71,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+
+  // --- Multiple major stars in same palace ---
+  CombinationRule(
+    id: 'nhieu_chinh_tinh_menh',
+    condition: const CombinationCondition(
+      palaceKey: 'menh',
+      stars: <String>['Thái Dương', 'Thiên Phủ', 'Vũ Khúc'],
+    ),
+    meaning:
+        'Mệnh cực kỳ mạnh với nhiều chính tinh hội tụ. '
+        'Có năng lực vượt trội và được nhiều người công nhận.',
+    risk: 'Quá nhiều năng lượng cùng lúc có thể gây bất ổn, muốn kiểm soát mọi thứ.',
+    advice: 'Cần học cách buông bỏ, tin tưởng người khác làm đúng vai trò.',
+    evidence: 'Mệnh có từ 3 chính tinh trở lên — hội tụ cát tinh.',
+    impact: 'high',
+    confidence: 0.82,
+    attribution: KnowledgeAttribution(
+      sourceType: KnowledgeSourceType.internalRewrite,
+      sourceRef: 'minh_menh_ai_kb_v1',
+      copyrightStatus: 'Authored as structured rules, no verbatim text.',
+      compiler: 'Minh Menh AI product team',
+      version: 'v1',
+      updatedAt: DateTime(2026, 5, 10),
+    ),
+  ),
+];

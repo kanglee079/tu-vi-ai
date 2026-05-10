@@ -36,6 +36,7 @@ import '../../features/insight/presentation/pages/life_map_page.dart';
 import '../../features/knowledge/presentation/controllers/knowledge_controller.dart';
 import '../../features/knowledge/presentation/pages/article_detail_page.dart';
 import '../../features/knowledge/presentation/pages/knowledge_tab.dart';
+import '../../features/reading/presentation/pages/star_lookup_page.dart';
 import '../../features/main/presentation/controllers/main_shell_controller.dart';
 import '../../features/main/presentation/pages/main_shell_page.dart';
 import '../../features/onboarding/presentation/pages/splash_page.dart';
@@ -262,6 +263,10 @@ class AppPages {
           ),
         ),
       ),
+    ),
+    GetPage<dynamic>(
+      name: AppRoutes.starLookup,
+      page: () => const StarLookupPage(),
     ),
   ];
 }

@@ -100,16 +100,21 @@ flutter run -d 13 --dart-define=API_BASE_URL=http://127.0.0.1:8080/v1
 
 ### Debug Mode
 
-Set `_kUseDebugDependencies = true` in `lib/main.dart` to use mock auth (no Firebase needed).
+Production mode auto-detected from `kDebugMode` + `--dart-define=DEBUG_DEPENDENCIES=true`. No code changes needed.
 
 ## Features
 
 - **Lá số tử vi** — Engine `dart_iztro`, 12 cung, an sao, đại/tiểu/nguyệt/nhật vận
-- **AI luận giải** — OpenAI structured output, chart context driven
+- **Bàn lá số circular astrolabe** — Interactive circular astrolabe with zoom/pan, palace cards, score badges
+- **AI luận giải** — OpenAI Responses API with structured JSON output, chart context driven, fallback to mock
+- **Knowledge Base thật** — 14 chính tinh, 20+ phụ tinh, 12 cung với full ngữ cảnh, 50+ combination rules
+- **Tra cứu sao** — Searchable star encyclopedia by name/element/keywords
+- **Chi tiết cung** — Palace detail page with knowledge base integration, related palaces navigation, star detail bottom sheet
 - **Ví xu** — Coin wallet với ledger, spend/preview unlock
-- **IAP** — Apple StoreKit + Google Play Billing, server-side verify
+- **IAP** — Apple StoreKit + Google Play Billing, server-side verify với backend Go
 - **Kiến thức** — CMS-backed article feed
 - **Nhật ký vận trình** — Journal với sentiment tracking
+- **Golden tests** — 11 test cases covering all 12 birth hours, lunar/solar calendar, leap years
 
 ## Build
 

@@ -17,4 +17,5 @@ abstract class AppRoutes {
   static const lifeMap = '/life-map';
   static const journal = '/journal';
   static const compatibility = '/compatibility';
+  static const starLookup = '/star-lookup';
 }

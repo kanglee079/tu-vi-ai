@@ -90,6 +90,11 @@ class AccountTab extends GetView<AccountController> {
                     ),
                     const SizedBox(height: 12),
                   ],
+                  FilledButton.tonal(
+                    onPressed: () => Get.toNamed(AppRoutes.starLookup),
+                    child: const Text('Tra cứu sao'),
+                  ),
+                  const SizedBox(height: 12),
                   if (FeatureFlags.publicCompatibilityEnabled)
                     FilledButton.tonal(
                       onPressed: () => Get.toNamed(AppRoutes.compatibility),

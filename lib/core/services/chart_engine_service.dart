@@ -40,7 +40,9 @@ class PrototypeChartEngineService implements ChartEngineService {
 
   FunctionalAstrolabe _buildAstrolabe(BirthProfile profile) {
     final birthDate =
-        '${profile.birthDate.year}-${profile.birthDate.month}-${profile.birthDate.day}';
+        '${profile.birthDate.year}-'
+        '${profile.birthDate.month.toString().padLeft(2, '0')}-'
+        '${profile.birthDate.day.toString().padLeft(2, '0')}';
     final timeIndex = _timeIndex(profile.birthHourLabel);
     final gender = profile.gender == Gender.female
         ? GenderName.female
