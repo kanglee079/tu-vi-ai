@@ -39,17 +39,19 @@ class IapVerificationService {
         defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.macOS;
     final path = isApple ? '/iap/apple/verify' : '/iap/google/verify';
-    final response = await _apiClientService.post(
-      path,
-      data: <String, Object?>{
-        'productId': productId,
+    final body = <String, Object?>{
+      'productId': productId,
+      if (isApple)
+        'transactionId': transactionId
+      else
         'transactionId': transactionId,
-        if (isApple)
-          'receiptPayload': serverVerificationData
-        else
-          'purchaseToken': serverVerificationData,
-      },
-    );
+    };
+    if (isApple) {
+      body['receiptPayload'] = serverVerificationData;
+    } else {
+      body['purchaseToken'] = serverVerificationData;
+    }
+    final response = await _apiClientService.post(path, data: body);
     return PurchaseVerifyResult.fromJson(
       (response.data as Map<dynamic, dynamic>).cast<String, Object?>(),
     );

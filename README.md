@@ -1,40 +1,134 @@
-# Minh Mệnh AI
+# Minh Mệnh AI — Tử Vi App
 
-Flutter UI prototype for a local-first tử vi app with mock chart, reading, AI, good-day, wallet, and knowledge flows.
+App tử vi thế hệ mới cho người Việt, kết hợp engine lá số local + AI luận giải cá nhân hóa + hệ thống ví xu/IAP.
 
-## Current Milestone
+## Tech Stack
 
-- Flutter UI prototype with GetX routing and mock repositories.
-- Local-first chart/profile flow with no backend dependency.
-- Controlled AI prompt contract and internal knowledge-base seed data.
-- No copyrighted book crawling or copied long-form source text.
+| Layer | Technology |
+|---|---|
+| Mobile App | Flutter 3.41+ |
+| State Management | GetX |
+| Local Database | ObjectBox |
+| Backend | Go 1.24 (chi/v5) |
+| Database | PostgreSQL + Redis (optional) |
+| AI | OpenAI Responses API (Structured Output) |
+| Auth | Firebase Auth |
+| Payments | Apple IAP + Google Play Billing |
 
-## Verification
+## Project Structure
+
+```
+tu_vi_ai/
+├── lib/                          # Flutter app
+│   ├── app/                      # App routing, bindings, main widget
+│   ├── core/
+│   │   ├── config/              # Feature flags
+│   │   ├── prompts/             # AI prompt policies
+│   │   ├── services/            # API, Auth, IAP, Wallet services
+│   │   ├── theme/               # App theme
+│   │   └── utils/
+│   ├── data/
+│   │   ├── local/objectbox/     # ObjectBox entities + service
+│   │   ├── mappers/
+│   │   ├── mock/                # Mock implementations (debug mode)
+│   │   ├── models/              # Data models
+│   │   └── repositories/        # Repositories (local + remote)
+│   ├── features/                # Feature modules
+│   │   ├── account/
+│   │   ├── ai/
+│   │   ├── auth/
+│   │   ├── chart/
+│   │   ├── compatibility/
+│   │   ├── fortune/
+│   │   ├── insight/
+│   │   ├── knowledge/
+│   │   ├── main/
+│   │   ├── onboarding/
+│   │   ├── reading/
+│   │   └── wallet/
+│   └── shared/                  # Shared widgets + navigation
+├── backend/                     # Go backend
+│   ├── cmd/api/                 # Entry point
+│   ├── internal/
+│   │   ├── app/                 # App layer (interfaces + types)
+│   │   ├── config/              # Config loading from .env
+│   │   ├── http/                # HTTP router + handlers
+│   │   └── platform/            # Platform services (DB, AI, IAP, Auth)
+│   ├── db/migrations/           # PostgreSQL migrations
+│   └── Dockerfile
+├── assets/
+├── docs/                        # PRD, production runtime docs
+└── pubspec.yaml
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Flutter 3.41+
+- Go 1.24+
+- Xcode 16+
+- PostgreSQL (for backend)
+- Firebase project (for auth + push)
+
+### Setup
+
+1. **Flutter dependencies**
 
 ```sh
-flutter analyze
+flutter pub get
+```
+
+2. **Backend**
+
+```sh
+cd backend
+cp .env.example .env
+# Fill in OPENAI_API_KEY in .env
+go run ./cmd/api
+```
+
+3. **Run the app**
+
+```sh
+# Uses mock auth + local DB (no Firebase needed for dev)
+flutter run -d 13
+
+# With backend API
+flutter run -d 13 --dart-define=API_BASE_URL=http://127.0.0.1:8080/v1
+```
+
+### Debug Mode
+
+Set `_kUseDebugDependencies = true` in `lib/main.dart` to use mock auth (no Firebase needed).
+
+## Features
+
+- **Lá số tử vi** — Engine `dart_iztro`, 12 cung, an sao, đại/tiểu/nguyệt/nhật vận
+- **AI luận giải** — OpenAI structured output, chart context driven
+- **Ví xu** — Coin wallet với ledger, spend/preview unlock
+- **IAP** — Apple StoreKit + Google Play Billing, server-side verify
+- **Kiến thức** — CMS-backed article feed
+- **Nhật ký vận trình** — Journal với sentiment tracking
+
+## Build
+
+```sh
+# Flutter iOS
+flutter build ios --simulator --no-codesign
+
+# Flutter Android
+flutter build apk --debug
+
+# Backend
+go build ./cmd/api
+
+# Test
+cd backend && go test ./...
 flutter test
+flutter analyze
 ```
 
-## AI / Knowledge Policy
+## License
 
-The app separates chart calculation from interpretation:
-
-```text
-engine facts -> internal knowledge rules -> AI rewrite -> UI
-```
-
-See `docs/AI_KNOWLEDGE_PROMPT.md` for the prompt and source policy.
-
-## Prototype Coverage
-
-- Onboarding, guest mode, auth placeholder
-- Chart list, create/edit chart, chart result, 12-palace reading
-- Major/minor/monthly/daily fortune
-- Good/bad day
-- AI assistant with controlled prompt/schema contract
-- Knowledge feed and article detail
-- Wallet/paywall
-- Life Map
-- Journal
-- Compatibility
+Private — All rights reserved.
